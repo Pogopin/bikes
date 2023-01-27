@@ -117,9 +117,3 @@
 
 
 </style>
-
-<script setup lang="js">
-
-
- 
-</script>

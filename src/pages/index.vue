@@ -3,6 +3,7 @@
   <Medida></Medida>
   <Galery></Galery>
   <Tecnologia></Tecnologia>
+  <Brands></Brands>
 </template>
 
 <script>
@@ -10,7 +11,7 @@ import { Header } from '@/components'
 import { Medida } from '@/components'
 import { Galery } from '@/components'
 import { Tecnologia } from '@/components'
-
+import { Brands } from '@/components'
 
 export default {
   name: 'Index-page',
@@ -19,6 +20,7 @@ export default {
     Medida,
     Galery,
     Tecnologia,
+    Brands,
   },
 }
 </script>
