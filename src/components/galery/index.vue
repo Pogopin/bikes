@@ -3,17 +3,12 @@
         <div class="container-fliud">
             <h1 class="galery__title">escolha a sua.</h1>
             <div class="galery__bikes bikes">
-                <div class="bikes__item"
-                v-for="bike in bikes"
-                :key="bike.id"
+                <BikeCard
+                    v-for="bike in bikes"
+                    :key="bike.id"
+                    :bikes_data="bike"
                 >
-                    <img class="bikes__item-img" src="@/assets/img/bicicleta1.jpg">
-                    
-                    
-                    <!-- <img :src="require('@/assets/img/bicicleta1.jpg')"> -->
-                    <h3 class="bikes__item-title">{{bike.name}}</h3>
-                    <p class="bikes__item-price">{{ bike.price}}</p>
-                </div>
+                </BikeCard>
             </div>
         </div>
     </section>
@@ -29,7 +24,6 @@
     margin: 0 auto;
 }
 .galery__title {
-    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 64px;
     line-height: 72px;
@@ -40,56 +34,22 @@
     display: flex;
     gap: 40px;
 }
-.bikes__item-img {
-    margin-bottom: 16px;
-}
-.bikes__item-title {
-    font-family: 'Poppins', sans-serif;
-    margin-bottom: 8px;
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 40px;
-    position: relative;
-    padding-left: 20px;
-}
-.bikes__item-title::before {
-    content: '';
-    background-color: #FFBB00;
-    position: absolute;
-    width: 12px;
-    height: 8px;
-    left: 0;
-    top: 17px;
-}
-.bikes__item-price {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 24px;
-    padding-left: 21px;
-}
 
 </style>
 
 <script setup lang="js">
-import { ref, onMounted, onBeforeMount } from 'vue';
 import { bikes } from '@/config/config.js';
-
+import { BikeCard } from '@/components'
 
 export default {
-	
+    name: 'galery-section',
+    components: {
+    BikeCard,
+    },
+    
 	setup() {
-			
 		return {bikes};
 	}
-
-    //data() {
-    //   return {
-    //       bikes
-    //   };
-    //}
 }
 
-
- 
 </script>

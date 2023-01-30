@@ -1,5 +1,7 @@
 @import './reset.css';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@1,900&family=Poppins:wght@400;500;600;700&display=swap');
+@import './variables.css';
 
 html {
     font-size: calc(11px + (16 - 11) * ((100vw - 1025px) / (1920 - 1025)));
@@ -15,15 +17,14 @@ ul {
 }
 * img {
     max-width: 100%;
+    
 }
 
-:root {
-    --bg-color: #121B25;
-    --accent-color: #1AA090;
-    --text-color: #d6d6d6;
-}
 [class*="__container"] {
     max-width: 1270px;
     margin: 0 auto;
     padding: 0 15px;
+}
+body {
+    font-family: 'Poppins', sans-serif;
 }

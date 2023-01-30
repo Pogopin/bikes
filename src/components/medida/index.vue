@@ -4,7 +4,14 @@
             <div class="medida__item">
                 <h1 class="medida__item-title">bicicletas feitas sob medida<span>.</span></h1>
                 <p class="medida__item-text">Bicicletas elétricas de alta precisão e qualidade,  feitas sob medida para o cliente. Explore o mundo na sua velocidade com a Bikcraft.</p>
-                <medidaBTN></medidaBTN>                  
+                <MedidaButton 
+                    @click="clickBtn"
+                    :title="'Selecione a sua'"
+                    :backgroundColor="true"
+                     
+                    
+                >
+                </MedidaButton>                  
             </div>
             <div class="medida__item">
                 <img class="intro-img" src="@/assets/img/img-intro.jpg" alt="">
@@ -16,7 +23,7 @@
 <style scoped>
 .medida {
     padding: 196px 0 120px;
-    background-color: black;
+    background-color:var(--bg-color);
 }
 .medida__container {
     display: flex;
@@ -25,21 +32,20 @@
 }
 .medida__item {
     max-width: 553px;
-    color: #FFF;
+    color: var(--text-color);
 }
 .intro-img {
     position: absolute;
     top: -202px;
 }
 .medida__item-title {
-    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 64px;
     line-height: 72px;
     margin-bottom: 36px;
 }
 .medida__item-title span {
-    color: #FFBB00;
+    color: var(--accent-color);
 }
 .medida__item-text {
     font-family: 'Roboto', sans-serif;
@@ -47,20 +53,27 @@
     font-size: 24px;
     line-height: 36px;
     margin-bottom: 20px;
-    color: #B3B3B3;
+    color: var(--second-text-color);
 }
 
 </style>
 <script>
 
-import { medidaBTN} from '@/components/ui'
+import MedidaButton from '@/components/ui/button.vue'
 
 export default {
   name: 'medida-section',
   components: {
-    medidaBTN,
+    MedidaButton,
     
   },
+  setup() {
+    function clickBtn() {
+        console.log('click btn');
+    }
+
+    return {clickBtn};
+  }
 }
 
 </script>

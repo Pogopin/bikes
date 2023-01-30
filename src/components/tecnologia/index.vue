@@ -13,14 +13,12 @@
                             <img class="item-info__img" src="@/assets/img/icon/eletrica.svg" alt="eletrica">
                             <h3 class="item-info__title">Motor Elétrico</h3>
                             <p class="item-info__text">Toda Bikcraft é equipada com um motor elétrico que possui duração de até 120h. A bateria é recarregada com a sua energia gasta ao pedalar.</p>
-
                         </div>
 
                         <div class="item-content__info-item item-info mw">
                             <img class="item-info__img" src="@/assets/img/icon/rastreador.svg" alt="rastreador">
                             <h3 class="item-info__title">Rastreador</h3>
                             <p class="item-info__text">Sabemos o quão preciosa é a sua Bikcraft, por isso adicionamos rastreadores e sistemas anti-furto para garantir o seu sossego.</p>
-
                         </div>
                     </div>                
                 </div>
@@ -37,7 +35,7 @@
 
 <style scoped>
 .tecnologia {
-    background-color: black;
+    background-color: var(--bg-color);
     padding: 80px 0 88px;
 }
 .tecnologia__content-item {
@@ -48,16 +46,15 @@
     font-weight: 500;
     font-size: 24px;
     line-height: 24px;
-    color: #B3B3B3;
+    color: var(--second-text-color);
     text-transform: uppercase;
     margin-bottom: 20px;
 }
 .item-content__title {
-    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 64px;
     line-height: 72px;
-    color: #FFF;
+    color: var(--text-color);
     margin-bottom: 20px;
 }
 .item-content__text {
@@ -65,16 +62,15 @@
     font-weight: 400;
     font-size: 24px;
     line-height: 36px;
-    color: #B3B3B3;
+    color: var(--second-text-color);
     margin-bottom: 20px;
     max-width: 535px;
 }
 .item-content__link {
-    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 24px;
     line-height: 36px;
-    color: #FFBB00;
+    color: var(--accent-color);
 }
 .item-content__info {
     margin-top: 84px;
@@ -85,17 +81,15 @@
 }
 .item-content__info-item {
     max-width: 264px;
-    
 }
 .mw {
     max-width: 320px;
 }
 .item-info__title {
-    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 24px;
     line-height: 36px;
-    color: #FFF;
+    color: var(--text-color);
     margin: 8px 0 8px;
 }
 .item-info__text {
@@ -103,7 +97,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: #B3B3B3;
+    color: var(--second-text-color);
 }
 .tecnologia__content {
     display: flex;
@@ -114,6 +108,5 @@
     position: absolute;
     top: -165px;
 }
-
 
 </style>

@@ -5,16 +5,16 @@
             <div class="brands__content">
                 <table>
                     <tr>
-                        <td class="col1"><img src="@/assets/img/brands/ranek.svg" alt=""></td>
-                        <td class="col2"><img src="@/assets/img/brands/caravan.svg" alt=""></td>
-                        <td><img src="@/assets/img/brands/dogs.svg" alt=""></td>
-                        <td><img src="@/assets/img/brands/handel.svg" alt=""></td>
+                        <td class="col1"><img src="@/assets/img/brands/ranek.svg" alt="ranek-logo"></td>
+                        <td class="col2"><img src="@/assets/img/brands/caravan.svg" alt="caravan-logo"></td>
+                        <td><img src="@/assets/img/brands/dogs.svg" alt="dogs-logo"></td>
+                        <td><img src="@/assets/img/brands/handel.svg" alt="handel-logo"></td>
                     </tr>
                     <tr>
-                        <td><img src="@/assets/img/brands/surfbot.svg" alt=""></td>
-                        <td><img src="@/assets/img/brands/wildbeast.svg" alt=""></td>
-                        <td><img src="@/assets/img/brands/flexblog.svg" alt=""></td>
-                        <td><img src="@/assets/img/brands/lescone.svg" alt=""></td>
+                        <td><img src="@/assets/img/brands/surfbot.svg" alt="surfbot-logo"></td>
+                        <td><img src="@/assets/img/brands/wildbeast.svg" alt="wildbeast-logo"></td>
+                        <td><img src="@/assets/img/brands/flexblog.svg" alt="flexblog-logo"></td>
+                        <td><img src="@/assets/img/brands/lescone.svg" alt="lescone-logo"></td>
                     </tr>
                     
                 </table>
@@ -36,43 +36,37 @@ table {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
-    color: #EDEDED;
-    
+    color: var(--table-color);
 }
 tr:first-of-type td {
-  border-top: 1px solid white;
-  border-left: 1px solid white;
+  border-top: 1px solid var(--text-color);
+  border-left: 1px solid var(--text-color);
   
 }
 tr:last-of-type td {
-  border-bottom: 1px solid white;
-  border-left: 1px solid white;
+  border-bottom: 1px solid var(--text-color);
+  border-left: 1px solid var(--text-color);
   
 }
 td:last-of-type {
-    border-right: 1px solid white;
+    border-right: 1px solid var(--text-color);
 }
-
 td {
-    border: 3px solid #EDEDED;
+    border: 3px solid var(--table-color);
     width: 348px;
     vertical-align: middle;
     text-align: center;
     padding: 45px 0;
 }
-
 .brands {
     padding: 200px 0 120px;
 }
 .brands__title {
     margin-bottom: 105px;
-    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 64px;
     line-height: 72px;
     padding-left: 110px;
 }
-
-
 
 </style>
