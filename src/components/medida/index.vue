@@ -5,11 +5,9 @@
                 <h1 class="medida__item-title">bicicletas feitas sob medida<span>.</span></h1>
                 <p class="medida__item-text">Bicicletas elétricas de alta precisão e qualidade,  feitas sob medida para o cliente. Explore o mundo na sua velocidade com a Bikcraft.</p>
                 <MedidaButton 
-                    @click="clickBtn"
                     :title="'Selecione a sua'"
-                    :backgroundColor="true"
-                     
-                    
+                    :btn="true"
+                    :customButton="false"                     
                 >
                 </MedidaButton>                  
             </div>
@@ -55,25 +53,15 @@
     margin-bottom: 20px;
     color: var(--second-text-color);
 }
-
 </style>
 <script>
-
 import MedidaButton from '@/components/ui/button.vue'
 
 export default {
   name: 'medida-section',
   components: {
     MedidaButton,
-    
   },
-  setup() {
-    function clickBtn() {
-        console.log('click btn');
-    }
-
-    return {clickBtn};
-  }
 }
 
 </script>

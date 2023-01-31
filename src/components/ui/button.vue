@@ -1,53 +1,65 @@
 <template>
     <button
-        :class="background"
+        :class="styleButton"
     >{{text}}</button>
 </template>
 
 <style scoped>
-button {
+
+.btn {
     color: #332200;
     font-family: inherit;
     font-weight: 600;
     font-size: 18px;
     line-height: 24px;
     padding: 16px 32px;
-    /* background-color: var(--accent-color); */
     border-radius: 5px;
     cursor: pointer;
+    background-color: var(--accent-color);
+}
+.customButton {
+    color: var(--c4);
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 16px 32px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--bg-second-color);
 }
 
-.btn {
-    background-color: var(--accent-color);;
-}
 </style>
 
 <script setup lang="js">
-import { computed, ref } from 'vue';
-
+import { computed } from 'vue'
 export default {
-    name: 'BaseButton',
+    name: 'Button',
     props: {
         title: {
             type: String,
             default: '----'
         },
-        backgroundColor: {
+        btn: {
             type: Boolean,
             default: 'false'
-        }
+        },
+        customButton: {
+            type: Boolean,
+            default: 'false'
+        },
                 
     },
-    setup(props, {emit}) {
-        const click = emit('click');
+    setup(props) {
         const text = props.title;
-        const background = {
-            'btn': props.backgroundColor
-        }
-
-        return {click, text, background}
+        const styleButton = computed(()=> {
+            return {
+                btn: props.btn,
+                customButton: props.customButton
+            }
+            
+        })
+        return {text, styleButton}
 	}
-    
-
 }
 </script>

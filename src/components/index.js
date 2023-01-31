@@ -7,6 +7,8 @@ const Tecnologia = defineAsyncComponent(() => import('./tecnologia/index.vue'));
 const Brands = defineAsyncComponent(() => import('./brands/index.vue'));
 const BikeCard = defineAsyncComponent(() => import('./bikeCard/index.vue'));
 const Reviews = defineAsyncComponent(() => import('./reviews/index.vue'));
+const Tarif = defineAsyncComponent(() => import('./tarif/index.vue'));
+const TarifCard = defineAsyncComponent(() => import('./tarifCard/index.vue'));
 
 export {
   Header,
@@ -15,5 +17,7 @@ export {
   Tecnologia,
   Brands,
   BikeCard,
-  Reviews
+  Reviews,
+  Tarif,
+  TarifCard
 };
