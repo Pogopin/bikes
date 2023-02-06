@@ -1,12 +1,12 @@
 <template>
     <button class="btn"
         :class="styleButton"
-    >{{text}}</button>
+    >{{props.title}}</button>
 </template>
 
 <style scoped>
 .btn {
-    color: #332200;
+    color: var(--btn-color);
     font-family: inherit;
     font-weight: 600;
     font-size: 18px;
@@ -17,7 +17,7 @@
     background-color: var(--accent-color);
 }
 .customButton {
-    color: var(--c4);
+    color: var(--light-grey-color);
     font-family: inherit;
     font-weight: 600;
     font-size: 18px;
@@ -34,7 +34,6 @@ const props = defineProps({
     title: String,
     customButton: Boolean
 });
-const text = props.title;
 const styleButton = computed(()=> {
     return {
         customButton: props.customButton

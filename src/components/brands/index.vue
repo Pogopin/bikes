@@ -4,20 +4,14 @@
             <h1 class="brands__title">Nossos parceiros.</h1>
             <div class="brands__content">
                 <table>
-                    <tr>
-                        <td v-for="el in brands[0]"
-                            :key="el.id"
-                        >
-                        <img :src="getImageUrl(el.img)">
+                    <tr v-for="el in brands"
+                        :key="el.id"
+                    >
+                        <td v-for="item in el.img"
+                            :key="item.img"
+                        ><img :src="getImageUrl(item.img)" alt="logo">
                         </td>
                     </tr>
-                    <tr>
-                        <td v-for="el in brands[1]"
-                            :key="el.id"
-                        >
-                        <img :src="getImageUrl(el.img)">
-                        </td>
-                    </tr>                 
                 </table>
             </div>
         </div>
@@ -70,17 +64,23 @@ function getImageUrl (name) {
     return new URL('../../assets/img/brands/' + name, import.meta.url).href
 }
 const brands = [
-    [
-        {id: 1, img: 'ranek.svg'},
-        {id: 2, img: 'caravan.svg'},
-        {id: 3, img: 'dogs.svg'},
-        {id: 4, img: 'handel.svg'},
-    ],
-    [
-        {id: 5, img: 'surfbot.svg'},
-        {id: 6, img: 'wildbeast.svg'},
-        {id: 7, img: 'flexblog.svg'},
-        {id: 8, img: 'lescone.svg'},   
-    ]
+    {
+        id: 1,
+        img: [
+            {img: 'ranek.svg'},
+            {img: 'caravan.svg'},
+            {img: 'dogs.svg'},
+            {img: 'handel.svg'},
+        ]
+    },
+    {
+        id: 2,
+        img: [
+            {img: 'surfbot.svg'},
+            {img: 'wildbeast.svg'},
+            {img: 'flexblog.svg'},
+            {img: 'lescone.svg'},
+        ]
+    },
 ]
 </script>

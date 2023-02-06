@@ -68,6 +68,8 @@
 .contacts__content {
     color: var(--second-text-color);
     display: flex;
-    gap: 272px;
+}
+.content__item:first-of-type {
+    margin-right: 272px;
 }
 </style>

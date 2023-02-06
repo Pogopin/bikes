@@ -1,7 +1,7 @@
 <template>
     <header class="header">
         <div class="header__container">
-            <router-link :to="{path: `/`}">
+            <router-link :to="'/'">
                 <img src="@/assets/img/bikcraft-logo.svg" alt="logo">
             </router-link>
             <nav class="header__navigation">
@@ -10,7 +10,7 @@
                         v-for="item in menu_items"
                         :key="item"
                     >
-                    <router-link :to= "{ path: `${item.page}` }" class="menu__link">{{item.title}}</router-link>
+                    <router-link :to= "item.page" class="menu__link">{{item.title}}</router-link>
                     </li>
                 </ul>
             </nav>

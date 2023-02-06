@@ -6,7 +6,7 @@
                 <TarifCard
                     v-for="el in data"
                     :key="el.id"
-                    :name="el.tarifInfo"
+                    :tarifInfo="el.tarifInfo"
                     :data="el.specification"
                     :btnText="el.btnText"
                     :customColorState="el.customColorState"

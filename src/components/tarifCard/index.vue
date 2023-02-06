@@ -1,12 +1,12 @@
 <template>
     <div class="tarif__item-prata prata-item">
         <div class="prata-item__header header-item">
-            <div class="header-item__name" :class="{'accent-color': tarif.name === 'OURO'}">{{tarif.name}}</div>
-            <div class="header-item__price">{{tarif.price}}</div>
+            <div class="header-item__name" :class="{'accent-color': props.tarifInfo.name === 'OURO'}">{{props.tarifInfo.name}}</div>
+            <div class="header-item__price">{{props.tarifInfo.price}}</div>
         </div>
         <ul class="prata-item__list">
             <li
-                v-for="el in tarifData"
+                v-for="el in props.data"
                 :key="el.name"
             >{{el.name}}</li>
         </ul>
@@ -17,7 +17,6 @@
         </baseButton>
     </div>
 </template>
-
 <style scoped>
 .tarif__item-prata{
     padding: 20px 32px 44px 60px;
@@ -62,7 +61,7 @@
 }
 
 .header-item__name {
-    color: var(--c6);
+    color: var(--accent-text-color);
     font-weight: 600;
     font-size: 36px;
     line-height: 48px;
@@ -76,20 +75,14 @@
     font-size: 36px;
     line-height: 48px;
 }
-
 </style>
-
 <script setup>
 import baseButton from '@/components/ui/button.vue';
-
 import { defineProps, ref } from "vue";
 const props = defineProps({
-    name: Object,
+    tarifInfo: Object,
     data: Object,
     btnText: String,
     customColorState: Boolean
 });
-const tarifData = props.data;
-const tarif = props.name;
-
 </script>

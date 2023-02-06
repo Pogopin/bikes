@@ -13,12 +13,7 @@
         </div>
     </section>
 </template>
-
 <style scoped>
-* {
-    margin: 0;
-    padding: 0;
-}
 .galery {
     padding: 240px 0 200px;
 }

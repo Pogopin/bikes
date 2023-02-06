@@ -22,6 +22,6 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 32px;
-    color: var(--c6);
+    color: var(--accent-text-color);
 }
 </style>

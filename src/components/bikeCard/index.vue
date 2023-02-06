@@ -1,8 +1,8 @@
 <template>
     <div class="bikes__item">
-        <img :src="getImageUrl(bikes_data.img)">
-        <h3 class="bikes__item-title">{{ bikes_data.name }}</h3>
-        <p class="bikes__item-price">{{ bikes_data.price}}</p>
+        <img :src="getImageUrl(props.bikes_data.img)">
+        <h3 class="bikes__item-title">{{ props.bikes_data.name }}</h3>
+        <p class="bikes__item-price">{{ props.bikes_data.price}}</p>
     </div>
 </template>
 <style scoped>
