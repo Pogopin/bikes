@@ -4,12 +4,10 @@
             <div class="medida__item">
                 <h1 class="medida__item-title">bicicletas feitas sob medida<span>.</span></h1>
                 <p class="medida__item-text">Bicicletas elétricas de alta precisão e qualidade,  feitas sob medida para o cliente. Explore o mundo na sua velocidade com a Bikcraft.</p>
-                <MedidaButton 
+                <baseButton 
                     :title="'Selecione a sua'"
-                    :btn="true"
-                    :customButton="false"                     
                 >
-                </MedidaButton>                  
+                </baseButton>                  
             </div>
             <div class="medida__item">
                 <img class="intro-img" src="@/assets/img/img-intro.jpg" alt="">
@@ -54,14 +52,6 @@
     color: var(--second-text-color);
 }
 </style>
-<script>
-import MedidaButton from '@/components/ui/button.vue'
-
-export default {
-  name: 'medida-section',
-  components: {
-    MedidaButton,
-  },
-}
-
+<script setup>
+import baseButton from '@/components/ui/button.vue'
 </script>

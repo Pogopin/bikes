@@ -1,11 +1,10 @@
 <template>
-    <button
+    <button class="btn"
         :class="styleButton"
     >{{text}}</button>
 </template>
 
 <style scoped>
-
 .btn {
     color: #332200;
     font-family: inherit;
@@ -28,38 +27,17 @@
     cursor: pointer;
     background-color: var(--bg-second-color);
 }
-
 </style>
-
-<script setup lang="js">
-import { computed } from 'vue'
-export default {
-    name: 'Button',
-    props: {
-        title: {
-            type: String,
-            default: '----'
-        },
-        btn: {
-            type: Boolean,
-            default: 'false'
-        },
-        customButton: {
-            type: Boolean,
-            default: 'false'
-        },
-                
-    },
-    setup(props) {
-        const text = props.title;
-        const styleButton = computed(()=> {
-            return {
-                btn: props.btn,
-                customButton: props.customButton
-            }
-            
-        })
-        return {text, styleButton}
-	}
-}
+<script setup>
+import { computed, defineProps } from 'vue'
+const props = defineProps({
+    title: String,
+    customButton: Boolean
+});
+const text = props.title;
+const styleButton = computed(()=> {
+    return {
+        customButton: props.customButton
+    }
+});
 </script>

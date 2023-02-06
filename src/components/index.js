@@ -9,6 +9,8 @@ const BikeCard = defineAsyncComponent(() => import('./bikeCard/index.vue'));
 const Reviews = defineAsyncComponent(() => import('./reviews/index.vue'));
 const Tarif = defineAsyncComponent(() => import('./tarif/index.vue'));
 const TarifCard = defineAsyncComponent(() => import('./tarifCard/index.vue'));
+const Contacts = defineAsyncComponent(() => import('./contacts/index.vue'));
+const Footer = defineAsyncComponent(() => import('./footer/index.vue'));
 
 export {
   Header,
@@ -19,5 +21,7 @@ export {
   BikeCard,
   Reviews,
   Tarif,
-  TarifCard
+  TarifCard,
+  Contacts,
+  Footer
 };

@@ -8,10 +8,8 @@
                 <p class="item__text">Pedalar sempre foi a minha paixão, o que o pessoal da Bikcraft fez foi intensificar o meu amor por esta atividade. Recomendo à todos que amo. </p>
                 <p class="item__author">Ana Júlia</p>
             </div>
-            
         </div>
     </section>    
-
 </template>
 
 <style scoped>
@@ -36,7 +34,6 @@
     font-size: 36px;
     line-height: 48px;
 }
-
 .item__text::after {
     content: '';
     position: absolute;
@@ -60,12 +57,4 @@
     color: var(--accent-second-color);
     margin-top: 32px;
 }
-
 </style>
-
-<script>
-
-export default {
-    
-}
-</script>

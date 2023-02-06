@@ -7,14 +7,12 @@
                     <h1 class="item-content__title">você escolhe as suas cores e componentes.</h1>
                     <p class="item-content__text">Cada Bikcraft é única e possui a sua identidade. As medidas serão exatas para o seu corpo e altura, garantindo maior conforto e ergonomia na sua pedalada. Você pode também personalizar completamente as suas cores.</p>
                     <a href="#" class="item-content__link">ESCOLHA UM MODELO</a>
-
                     <div class="item-content__info">
                         <div class="item-content__info-item item-info">
                             <img class="item-info__img" src="@/assets/img/icon/eletrica.svg" alt="eletrica">
                             <h3 class="item-info__title">Motor Elétrico</h3>
                             <p class="item-info__text">Toda Bikcraft é equipada com um motor elétrico que possui duração de até 120h. A bateria é recarregada com a sua energia gasta ao pedalar.</p>
                         </div>
-
                         <div class="item-content__info-item item-info mw">
                             <img class="item-info__img" src="@/assets/img/icon/rastreador.svg" alt="rastreador">
                             <h3 class="item-info__title">Rastreador</h3>
@@ -22,15 +20,12 @@
                         </div>
                     </div>                
                 </div>
-
                 <div class="tecnologia__content-item item-content">
                     <img class="item-content__img" src="@/assets/img/diferencial.jpg" alt="">
                 </div>
-                
             </div>
         </div>
     </section>
-    
 </template>
 
 <style scoped>
@@ -108,5 +103,4 @@
     position: absolute;
     top: -165px;
 }
-
 </style>

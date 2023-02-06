@@ -6,14 +6,15 @@
                 <TarifCard
                     v-for="el in data"
                     :key="el.id"
-                    :name="el.t_name"
-                    :data="el.arrayItem"
+                    :name="el.tarifInfo"
+                    :data="el.specification"
+                    :btnText="el.btnText"
+                    :customColorState="el.customColorState"
                 ></TarifCard>
             </div>
         </div>
     </section>
 </template>
-
 <style scoped>
 .tarif {
     padding: 60px 0 120px;
@@ -32,18 +33,7 @@
     gap: 41px;
 }
 </style>
-
-<script setup lang="js">
-import { TarifCard } from '@/components';
+<script setup>
+import {TarifCard} from '../index';
 import { data } from '@/config/tarifConfig.js';
-
-export default {
-    name: 'tarif-section',
-    components: {
-        TarifCard,
-},
-setup() {
-    return { data }
-    }
-}
 </script>

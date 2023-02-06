@@ -1,6 +1,6 @@
 <template>
     <section class="galery">
-        <div class="container-fliud">
+        <div class="container-fluid">
             <h1 class="galery__title">escolha a sua.</h1>
             <div class="galery__bikes bikes">
                 <BikeCard
@@ -15,10 +15,14 @@
 </template>
 
 <style scoped>
+* {
+    margin: 0;
+    padding: 0;
+}
 .galery {
     padding: 240px 0 200px;
 }
-.container-fliud {
+.container-fluid {
     max-width: 1490px;
     padding: 0 15px;
     margin: 0 auto;
@@ -34,22 +38,8 @@
     display: flex;
     gap: 40px;
 }
-
 </style>
-
-<script setup lang="js">
+<script setup>
 import { bikes } from '@/config/config.js';
-import { BikeCard } from '@/components'
-
-export default {
-    name: 'galery-section',
-    components: {
-    BikeCard,
-    },
-    
-	setup() {
-		return {bikes};
-	}
-}
-
+import { BikeCard } from '../index';
 </script>

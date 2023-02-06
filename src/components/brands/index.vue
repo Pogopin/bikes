@@ -5,24 +5,23 @@
             <div class="brands__content">
                 <table>
                     <tr>
-                        <td class="col1"><img src="@/assets/img/brands/ranek.svg" alt="ranek-logo"></td>
-                        <td class="col2"><img src="@/assets/img/brands/caravan.svg" alt="caravan-logo"></td>
-                        <td><img src="@/assets/img/brands/dogs.svg" alt="dogs-logo"></td>
-                        <td><img src="@/assets/img/brands/handel.svg" alt="handel-logo"></td>
+                        <td v-for="el in brands[0]"
+                            :key="el.id"
+                        >
+                        <img :src="getImageUrl(el.img)">
+                        </td>
                     </tr>
                     <tr>
-                        <td><img src="@/assets/img/brands/surfbot.svg" alt="surfbot-logo"></td>
-                        <td><img src="@/assets/img/brands/wildbeast.svg" alt="wildbeast-logo"></td>
-                        <td><img src="@/assets/img/brands/flexblog.svg" alt="flexblog-logo"></td>
-                        <td><img src="@/assets/img/brands/lescone.svg" alt="lescone-logo"></td>
-                    </tr>
-                    
+                        <td v-for="el in brands[1]"
+                            :key="el.id"
+                        >
+                        <img :src="getImageUrl(el.img)">
+                        </td>
+                    </tr>                 
                 </table>
             </div>
-
         </div>
     </section>
-    
 </template>
 
 <style scoped>
@@ -31,7 +30,6 @@
     padding: 0 15px;
     margin: 0 auto;
 }
-
 table {
     width: 100%;
     border-collapse: collapse;
@@ -41,12 +39,10 @@ table {
 tr:first-of-type td {
   border-top: 1px solid var(--text-color);
   border-left: 1px solid var(--text-color);
-  
 }
 tr:last-of-type td {
   border-bottom: 1px solid var(--text-color);
   border-left: 1px solid var(--text-color);
-  
 }
 td:last-of-type {
     border-right: 1px solid var(--text-color);
@@ -68,5 +64,23 @@ td {
     line-height: 72px;
     padding-left: 110px;
 }
-
 </style>
+<script setup>
+function getImageUrl (name) {
+    return new URL('../../assets/img/brands/' + name, import.meta.url).href
+}
+const brands = [
+    [
+        {id: 1, img: 'ranek.svg'},
+        {id: 2, img: 'caravan.svg'},
+        {id: 3, img: 'dogs.svg'},
+        {id: 4, img: 'handel.svg'},
+    ],
+    [
+        {id: 5, img: 'surfbot.svg'},
+        {id: 6, img: 'wildbeast.svg'},
+        {id: 7, img: 'flexblog.svg'},
+        {id: 8, img: 'lescone.svg'},   
+    ]
+]
+</script>

@@ -1,25 +1,20 @@
 <template>
     <div class="tarif__item-prata prata-item">
         <div class="prata-item__header header-item">
-            <div class="header-item__name" :class="{'accent-color': t_name.text === 'OURO'}">{{t_name.text}}</div>
-            <div class="header-item__price">{{t_name.price}}</div>
+            <div class="header-item__name" :class="{'accent-color': tarif.name === 'OURO'}">{{tarif.name}}</div>
+            <div class="header-item__price">{{tarif.price}}</div>
         </div>
         <ul class="prata-item__list">
             <li
-                v-for="el in t_data"
+                v-for="el in tarifData"
                 :key="el.name"
             >{{el.name}}</li>
         </ul>
-        <TarifButton v-show="t_name.text === 'PRATA'"
-            :title="'INSCREVA-SE'"
-            :customButton="true"
-            :btn="false"
-        ></TarifButton>
-        <TarifButton v-show="t_name.text === 'OURO'"
-            :title="'INSCREVA-SE'"
-            :customButton="false"
-            :btn="true"
-        ></TarifButton>
+        <baseButton
+            :title="props.btnText"
+            :customButton="props.customColorState"
+        >
+        </baseButton>
     </div>
 </template>
 
@@ -84,34 +79,17 @@
 
 </style>
 
-<script setup lang="js">
-import TarifButton from '@/components/ui/button.vue';
-import { defineProps, ref } from "vue";
+<script setup>
+import baseButton from '@/components/ui/button.vue';
 
-export default {
-    name: "tarif-card",
-    components: {
-        TarifButton
-    },
-    props: {
-        name: {
-            type: Object,
-            default() {
-                return {};
-            }
-        },
-        data: {
-            type: Object,
-            default() {
-                return {};
-            }
-        }
-    },
-    setup(props) {
-        const t_name = props.name;
-        const t_data = props.data;
-        return {t_name, t_data};
-    }
-}
+import { defineProps, ref } from "vue";
+const props = defineProps({
+    name: Object,
+    data: Object,
+    btnText: String,
+    customColorState: Boolean
+});
+const tarifData = props.data;
+const tarif = props.name;
 
 </script>

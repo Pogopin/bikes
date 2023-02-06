@@ -4,11 +4,11 @@
         <h3 class="bikes__item-title">{{ bikes_data.name }}</h3>
         <p class="bikes__item-price">{{ bikes_data.price}}</p>
     </div>
-    
 </template>
-
 <style scoped>
-
+.bikes__item {
+    max-width: 460px;
+}
 .bikes__item-img {
     margin-bottom: 16px;
 }
@@ -36,28 +36,14 @@
     line-height: 24px;
     padding-left: 21px;
 }
-
 </style>
 
-<script setup lang="js">
-
-export default {
-    name: "bike-card",
-    props: {
-        bikes_data: {
-            type: Object,
-            default() {
-                return {}
-            }
-        }
-    },
-	setup(props) {
-        function getImageUrl (name) {
-                return new URL('../../assets/img/' + name, import.meta.url).href
-            }
-			
-		return {getImageUrl};
-	}
+<script setup>
+import {defineProps } from 'vue'
+const props = defineProps({
+    bikes_data: Object,
+});
+function getImageUrl (name) {
+    return new URL('../../assets/img/' + name, import.meta.url).href
 }
-
 </script>

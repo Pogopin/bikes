@@ -1,31 +1,35 @@
 const data = [
     {
         id: 1,
-        t_name: {
-            text: 'PRATA',
+        tarifInfo: {
+            name: 'PRATA',
             price: 'R$ 199'
         },
-        arrayItem: [
+        specification: [
             {name: 'Duas trocas por ano',},
             {name: 'Assistência técnica',},
             {name: 'Suporte 08h às 18h',},
             {name: 'Cobertura estatual',},
-        ]
+        ],
+        btnText: 'INSCREVA-SE',
+        customColorState: true
     },
     {
         id: 2,
-        t_name: {
-            text: 'OURO',
+        tarifInfo: {
+            name: 'OURO',
             price: 'R$ 299'
         },
-        arrayItem: [
+        specification: [
             {name: 'Cinco trocas por ano',},
             {name: 'Assistência especial',},
             {name: 'Suporte 24h',},
             {name: 'Cobertura nacional',},
             {name: 'Descontos em parceiros',},
             {name: 'Acesso ao Clube Bikecraft',},
-        ]
+        ],
+        btnText: 'INSCREVA-SF',
+        customColorState: false
     }
 ]
 export {data}
