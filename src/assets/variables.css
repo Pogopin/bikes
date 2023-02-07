@@ -1,0 +1,13 @@
+:root {
+    --bg-color: black;
+    --bg-second-color: #121212;
+    --accent-color: #FFBB00;
+    --accent-second-color: #A66F00;
+    --text-color: #FFF;
+    --second-text-color: #B3B3B3;
+    --tree-text-color: #F7F7F7;
+    --table-color: #EDEDED;
+    --accent-text-color: #9C9C9C;
+    --light-grey-color: #CCCCCC;
+    --btn-color: #332200;
+  }
