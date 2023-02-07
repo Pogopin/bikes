@@ -1,8 +1,8 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import index from '../pages/index.vue';
-import bicicletasPage from '../pages/bicicletasPage.vue';
-import segurosPage from '../pages/segurosPage.vue';
-import contactPage from '../pages/contactPage.vue';
+import { createRouter, createWebHistory } from 'vue-router'
+import index from '../pages/index.vue'
+import biciclets from '../pages/bicicletas/index.vue'
+import seguros from '../pages/seguros/index.vue'
+import contact from '../pages/contact/index.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,17 +13,16 @@ const router = createRouter({
     },
     {
       path: '/bicicletas',
-      component: bicicletasPage
+      component: biciclets
     },
     {
       path: '/seguros',
-      component: segurosPage
+      component: seguros
     },
     {
       path: '/Contato',
-      component: contactPage
-    },
-    
+      component: contact
+    }
   ]
 })
 

@@ -1,8 +1,16 @@
+<template>
+  <div class="layout">
+    <Header />
+    <div class="layout__content">
+      <RouterView />
+    </div>
+    <Footer />
+  </div>
+</template>
+
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
+import { Header, Footer } from '../src/components/index'
 </script>
 
-<template>
-  <RouterView />
-</template>
 

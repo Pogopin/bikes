@@ -1,15 +1,25 @@
 <template>
-    <Header></Header>
-    <Medida></Medida>
-    <Galery></Galery>
-    <Tecnologia></Tecnologia>
-    <Brands></Brands>
-    <Reviews></Reviews>
-    <Tarif></Tarif>
-    <Contacts></Contacts>
-    <Footer></Footer>
+    <Medida />
+    <Galery />
+    <Tecnologia />
+    <Brands />
+    <Reviews />
+    <Tarif />
+    <Contacts />
 </template>
-<script setup>
-import { Header, Medida, Galery, Tecnologia, Brands, Reviews, Tarif, Contacts, Footer} from '../components'
 
+<script setup>
+import { Medida, Galery, Tecnologia, Brands, Reviews, Tarif, Contacts } from '../components'
+
+import { useBikesStore } from '../stores/bikesStore'
+import { computed, onMounted } from 'vue'
+
+const bikesStore = useBikesStore()
+
+const data = computed(() => bikesStore.getBikesData)
+console.log('data :', data)
+
+onMounted(() => {
+  bikesStore.getBikes()
+})
 </script>
