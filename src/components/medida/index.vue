@@ -10,7 +10,7 @@
                 </baseButton>                  
             </div>
             <div class="medida__item">
-                <img class="intro-img" src="@/assets/img/img-intro.jpg" alt="">
+                <img class="intro-img" src="../../assets/img/img-intro.jpg" alt="">
             </div>
         </div>
     </section>
@@ -53,5 +53,5 @@
 }
 </style>
 <script setup>
-import baseButton from '@/components/ui/button.vue'
+import { BaseButton } from '../ui'
 </script>

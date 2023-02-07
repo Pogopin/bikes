@@ -35,6 +35,6 @@
 }
 </style>
 <script setup>
-import { bikes } from '@/config/config.js';
-import { BikeCard } from '../index';
+import { bikes } from '../../config/config'
+import { BikeCard } from '../index'
 </script>

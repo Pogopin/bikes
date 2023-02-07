@@ -1,4 +1,4 @@
-const data = [
+export const data = [
     {
         id: 1,
         tarifInfo: {
@@ -6,10 +6,10 @@ const data = [
             price: 'R$ 199'
         },
         specification: [
-            {name: 'Duas trocas por ano',},
-            {name: 'Assistência técnica',},
-            {name: 'Suporte 08h às 18h',},
-            {name: 'Cobertura estatual',},
+            { name: 'Duas trocas por ano' },
+            { name: 'Assistência técnica' },
+            { name: 'Suporte 08h às 18h' },
+            { name: 'Cobertura estatual' }
         ],
         btnText: 'INSCREVA-SE',
         customColorState: true
@@ -21,15 +21,14 @@ const data = [
             price: 'R$ 299'
         },
         specification: [
-            {name: 'Cinco trocas por ano',},
-            {name: 'Assistência especial',},
-            {name: 'Suporte 24h',},
-            {name: 'Cobertura nacional',},
-            {name: 'Descontos em parceiros',},
-            {name: 'Acesso ao Clube Bikecraft',},
+            { name: 'Cinco trocas por ano' },
+            { name: 'Assistência especial' },
+            { name: 'Suporte 24h' },
+            { name: 'Cobertura nacional' },
+            { name: 'Descontos em parceiros' },
+            { name: 'Acesso ao Clube Bikecraft' }
         ],
         btnText: 'INSCREVA-SF',
         customColorState: false
     }
 ]
-export {data}

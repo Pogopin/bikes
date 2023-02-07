@@ -67,20 +67,20 @@ const brands = [
     {
         id: 1,
         img: [
-            {img: 'ranek.svg'},
-            {img: 'caravan.svg'},
-            {img: 'dogs.svg'},
-            {img: 'handel.svg'},
+            { img: 'ranek.svg' },
+            { img: 'caravan.svg' },
+            { img: 'dogs.svg' },
+            { img: 'handel.svg' }
         ]
     },
     {
         id: 2,
         img: [
-            {img: 'surfbot.svg'},
-            {img: 'wildbeast.svg'},
-            {img: 'flexblog.svg'},
-            {img: 'lescone.svg'},
+            { img: 'surfbot.svg' },
+            { img: 'wildbeast.svg' },
+            { img: 'flexblog.svg' },
+            { img: 'lescone.svg' }
         ]
-    },
+    }
 ]
 </script>
