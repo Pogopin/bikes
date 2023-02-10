@@ -3,7 +3,7 @@
         <div class="bikes__item-rating"><span>{{ props.bikes_data.rating }}</span></div>
         <img :src="getImageUrl(props.bikes_data.img)" alt="image">
         <h3 class="bikes__item-title">{{ title[0] }}</h3>
-        <p class="bikes__item-price">{{ 'R$ ' + props.bikes_data.price}}</p>
+        <p class="bikes__item-price">R$ {{ props.bikes_data.price}}</p>
     </div>
 </template>
 <style scoped>
@@ -57,6 +57,6 @@ const props = defineProps({
 })
 const title = props.bikes_data.title.split(' ');
 function getImageUrl (name) {
-    return new URL('../../assets/img/' + name, import.meta.url).href
+    return new URL('../../../assets/img/' + name, import.meta.url).href
 }
 </script>

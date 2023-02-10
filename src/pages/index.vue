@@ -1,7 +1,7 @@
 <template>
     <Medida />
     <Galery
-      :data="bikesStore.$state.bikesData"
+      :data="bikesData"
     />
     <Tecnologia />
     <Brands />
@@ -13,18 +13,10 @@
 <script setup>
 import { Medida, Galery, Tecnologia, Brands, Reviews, Tarif, Contacts } from '../components'
 import { useBikesStore } from '../stores/bikesStore'
-import { computed, onBeforeMount } from 'vue'
+import { computed, onBeforeMount, onMounted } from 'vue'
 
 const bikesStore = useBikesStore();
-const timer = setInterval(()=> {
-  if(bikesStore.isLoading) {
-    console.log('данные загрузились');
-    // const dataB = computed(() => bikesStore.getBikesData);
-    clearInterval(timer);
-    return;
-  }
-},1000)
-
+const bikesData = computed(() => bikesStore.getBikesData);
 onBeforeMount(() => {
   bikesStore.getBikes();
 });

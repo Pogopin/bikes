@@ -2,7 +2,10 @@
     <section class="galery">
         <div class="container-fluid">
             <h1 class="galery__title">escolha a sua.</h1>
-            <div class="galery__bikes bikes">
+            <div v-if="!data">Данные загружаются!</div>
+            <div 
+                v-else
+                class="galery__bikes bikes">
                 <BikeCard
                     v-for="bike in props.data"
                     :key="bike.id"
@@ -35,8 +38,8 @@
 }
 </style>
 <script setup>
-import { BikeCard } from '../index'
-import { defineProps, ref, toRefs} from 'vue'
+import { BikeCard } from '../../index'
+import { defineProps } from 'vue'
 const props = defineProps({
     data: Object
 })

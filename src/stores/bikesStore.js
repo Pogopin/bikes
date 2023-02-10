@@ -5,7 +5,6 @@ const id = 'bikes-store'
 export const useBikesStore = defineStore(id, {
   state: () => {
     return {
-      isLoading: 0,
       bikesData: []
     }
   },
@@ -17,20 +16,15 @@ export const useBikesStore = defineStore(id, {
       try {
         const response = await fetch('https://fakestoreapi.com/products?limit=3');
         const data = await response.json();
-        this.bikesData = data.map((el) => {
+        this.bikesData = data.map((el, i) => {
           return {
             id: el.id,
             title: el.title,
             price: el.price,
-            rating: el.rating.rate
+            rating: el.rating.rate,
+            img: `bicicleta${i+1}.jpg`
           }
         });
-        this.bikesData.forEach((el, i) => {
-          el.img = `bicicleta${i+1}.jpg`; 
-        });
-
-        console.log(this.bikesData)
-        this.isLoading = 1;
       } 
       catch (e) {
         console.log('e :', e);
