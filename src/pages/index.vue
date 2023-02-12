@@ -11,7 +11,8 @@
 </template>
 
 <script setup>
-import { Medida, Galery, Tecnologia, Brands, Reviews, Tarif, Contacts } from '../components'
+import { Medida, Galery, Tecnologia, Brands, Reviews, Tarif, Contacts } from '../components/widgets'
+import { Header, Footer } from '../components/sections/'
 import { useBikesStore } from '../stores/bikesStore'
 import { computed, onBeforeMount, onMounted } from 'vue'
 

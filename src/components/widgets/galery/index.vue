@@ -38,7 +38,7 @@
 }
 </style>
 <script setup>
-import { BikeCard } from '../../index'
+import { BikeCard } from '../index'
 import { defineProps } from 'vue'
 const props = defineProps({
     data: Object

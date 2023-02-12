@@ -34,6 +34,6 @@
 }
 </style>
 <script setup>
-import { TarifCard } from '../../index'
+import { TarifCard } from '../index'
 import { data } from '../../../config/tarifConfig.js'
 </script>

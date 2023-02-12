@@ -20,7 +20,7 @@
 
 <script setup>
 import { RouterView } from 'vue-router'
-import { Header, Footer } from '../src/components/index'
+import { Header, Footer } from '../src/components/sections/index'
 </script>
 
 
