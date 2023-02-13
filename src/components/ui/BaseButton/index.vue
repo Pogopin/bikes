@@ -1,7 +1,9 @@
 <template>
     <button class="btn"
         :class="styleButton"
-    >{{props.title}}</button>
+    >
+	{{props.title}}
+	</button>
 </template>
 
 <style scoped>
