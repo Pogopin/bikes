@@ -14,14 +14,20 @@ export const useBikesStore = defineStore(id, {
   actions: {
     async getBikes () {
       try {
-        await fetch('https://fakestoreapi.com/products?limit=5')
-          .then(res => res.json())
-          .then(data => {
-            console.log('data :', data)
-            // тут логика добавление в стор
-          })
-      } catch (e) {
-        console.log('e :', e)
+        const response = await fetch('https://fakestoreapi.com/products?limit=3');
+        const data = await response.json();
+        this.bikesData = data.map((el, i) => {
+          return {
+            id: el.id,
+            title: el.title,
+            price: el.price,
+            rating: el.rating.rate,
+            img: `bicicleta${i+1}.jpg`
+          }
+        });
+      } 
+      catch (e) {
+        console.log('e :', e);
       }
     }
   }

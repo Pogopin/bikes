@@ -61,7 +61,7 @@ td {
 </style>
 <script setup>
 function getImageUrl (name) {
-    return new URL('../../assets/img/brands/' + name, import.meta.url).href
+    return new URL('../../../assets/img/brands/' + name, import.meta.url).href
 }
 const brands = [
     {

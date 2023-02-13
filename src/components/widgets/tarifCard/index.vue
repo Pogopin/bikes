@@ -55,7 +55,7 @@
     height: 19px;
     position: absolute;
     color: var(--accent-color);
-    background: url('../../assets/img/icon/Vector.svg') no-repeat;
+    background: url('../../../assets/img/icon/Vector.svg') no-repeat;
     left: -24px;
     top: 6px;
 }
@@ -77,7 +77,7 @@
 }
 </style>
 <script setup>
-import { BaseButton } from '../ui'
+import { BaseButton } from '../../ui'
 import { defineProps } from 'vue'
 const props = defineProps({
     tarifInfo: Object,
