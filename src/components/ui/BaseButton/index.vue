@@ -3,6 +3,7 @@
         :class="styleButton"
     >
 	{{props.title}}
+    <slot></slot>
 	</button>
 </template>
 
@@ -17,6 +18,7 @@
     border-radius: 5px;
     cursor: pointer;
     background-color: var(--accent-color);
+    border: none;
 }
 .customButton {
     color: var(--light-grey-color);

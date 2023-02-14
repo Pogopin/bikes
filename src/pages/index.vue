@@ -7,12 +7,10 @@
     <Brands />
     <Reviews />
     <Tarif />
-    <Contacts />
 </template>
 
 <script setup>
-import { Medida, Galery, Tecnologia, Brands, Reviews, Tarif, Contacts } from '../components/widgets'
-import { Header, Footer } from '../components/sections/'
+import { Medida, Galery, Tecnologia, Brands, Reviews, Tarif } from '../components/widgets'
 import { useBikesStore } from '../stores/bikesStore'
 import { computed, onBeforeMount, onMounted } from 'vue'
 
