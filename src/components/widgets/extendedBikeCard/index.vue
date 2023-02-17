@@ -25,6 +25,7 @@
                     <div class="item__content-btn">
                         <BaseButton
                             :title="'MAIS SOBRE'"
+							@click="showId(props.extendedData.id)"
                         >
                         <i class="fa-solid fa-arrow-right-long"></i>
                         </BaseButton>
@@ -127,6 +128,10 @@ const props = defineProps({
     extendedData: Object
 })
 const title = props.extendedData.title.split(' ');
+
+function showId (el) {
+    console.log(el);
+}
 function getImageUrl (name) {
     return new URL('../../../assets/img/' + name, import.meta.url).href;
 }
