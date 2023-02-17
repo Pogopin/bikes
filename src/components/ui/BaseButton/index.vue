@@ -20,7 +20,7 @@
     background-color: var(--accent-color);
     border: none;
 }
-.customButton {
+.custom_button {
     color: var(--light-grey-color);
     font-family: inherit;
     font-weight: 600;
@@ -40,7 +40,7 @@ const props = defineProps({
 })
 const styleButton = computed(()=> {
     return {
-        customButton: props.customButton
+        custom_button: props.customButton
     }
 })
 </script>

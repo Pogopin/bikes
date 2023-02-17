@@ -1,7 +1,7 @@
 <template>
   <HeaderInner
-    :text="'ESCOLHA A MELHORA PARA VOCÊ'"
-    :title="'nossas bicicletas.'"
+    text="ESCOLHA A MELHORA PARA VOCÊ"
+    title="nossas bicicletas."
   />
   <BikesInfo
     :data="bikesExData"
