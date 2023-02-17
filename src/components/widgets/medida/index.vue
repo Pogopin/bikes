@@ -4,10 +4,10 @@
             <div class="medida__item">
                 <h1 class="medida__item-title">bicicletas feitas sob medida<span>.</span></h1>
                 <p class="medida__item-text">Bicicletas elétricas de alta precisão e qualidade,  feitas sob medida para o cliente. Explore o mundo na sua velocidade com a Bikcraft.</p>
-                <baseButton 
+                <BaseButton 
                     :title="'Selecione a sua'"
                 >
-                </baseButton>                  
+                </BaseButton>                  
             </div>
             <div class="medida__item">
                 <img class="intro-img" src="../../../assets/img/img-intro.jpg" alt="">

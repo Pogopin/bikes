@@ -8,9 +8,10 @@ const BikeCard = defineAsyncComponent(() => import('./bikeCard/index.vue'))
 const Reviews = defineAsyncComponent(() => import('./reviews/index.vue'))
 const Tarif = defineAsyncComponent(() => import('./tarif/index.vue'))
 const TarifCard = defineAsyncComponent(() => import('./tarifCard/index.vue'))
-const Contacts = defineAsyncComponent(() => import('./contacts/index.vue'))
-
+const HeaderInner = defineAsyncComponent(() => import('./headerInner/index.vue'))
+const ExtendedBikeCard = defineAsyncComponent(() => import('./extendedBikeCard/index.vue'))
+const BikesInfo = defineAsyncComponent(() => import('./bikesInfo/index.vue'))
 
 export {
-  Medida, Galery, Tecnologia, Brands, BikeCard, Reviews, Tarif, TarifCard, Contacts
+  Medida, Galery, Tecnologia, Brands, BikeCard, Reviews, Tarif, TarifCard, HeaderInner, ExtendedBikeCard, BikesInfo
 }

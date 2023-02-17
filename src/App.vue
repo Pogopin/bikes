@@ -4,6 +4,7 @@
     <div class="layout__content">
       <RouterView />
     </div>
+    <Contacts />
     <Footer />
   </div>
 </template>
@@ -20,7 +21,8 @@
 
 <script setup>
 import { RouterView } from 'vue-router'
-import { Header, Footer } from '../src/components/sections/index'
+import { Header, Footer, Contacts } from '../src/components/sections/index'
+// import { Contacts } from '../src/components/widgets/index'
 </script>
 
 

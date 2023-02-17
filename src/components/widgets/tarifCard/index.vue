@@ -10,11 +10,11 @@
                 :key="el.name"
             >{{el.name}}</li>
         </ul>
-        <baseButton
+        <BaseButton
             :title="props.btnText"
             :customButton="props.customColorState"
         >
-        </baseButton>
+        </BaseButton>
     </div>
 </template>
 <style scoped>
