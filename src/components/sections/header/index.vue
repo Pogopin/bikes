@@ -45,8 +45,8 @@
 </style>
 <script setup>
 const menu_items = [
-    { title: 'Bicicletas', page: 'bicicletas' },
-    { title: 'Seguros', page: 'seguros' },
-    { title: 'Contato', page: 'contato' }
+    { title: 'Bicicletas', page: '/bicicletas' },
+    { title: 'Seguros', page: '/seguros' },
+    { title: 'Contato', page: '/contato' }
 ]
 </script>
