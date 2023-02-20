@@ -26,27 +26,13 @@
                 <h3 class="item__subtitle">Informações</h3>
                 <div class="item__informations item-background">
                     <div class="item__informations-block block">
-                        <div class="block__content">
-                            <img src="../../../assets/img/icon/eletrica.svg" alt="image">
-                            <h3 class="block__content-title">Motor Elétrico</h3>
+                        <div 
+                            v-for="el in props.specifications.characteristics"
+                            :key="el.name"
+                            class="block__content">
+                            <img :src="getImageUrlIcon(el.icon)" alt="image">
+                            <h3 class="block__content-title">{{el.name}}</h3>
                             <p class="block__content-text">Permite você viajar distâncias inimaginaveis com a sua bike.</p>
-                        </div>
-                        <div class="block__content">
-                            <img src="../../../assets/img/icon/rastreador.svg" alt="image">
-                            <h3 class="block__content-title">Rastreador</h3>
-                            <p class="block__content-text">Rastreador e sistema anti-furto para garantir o seu sossego.</p>
-                        </div>
-                    </div>
-                    <div class="item__informations-block block">
-                        <div class="block__content">
-                            <img src="../../../assets/img/icon/velocidade.svg" alt="image">
-                            <h3 class="block__content-title">40 Km/h</h3>
-                            <p class="block__content-text">A mais rápida bicicleta elétrica disponível hoje no mercado.</p>
-                        </div>
-                        <div class="block__content">
-                            <img src="../../../assets/img/icon/lines.svg" alt="image">
-                            <h3 class="block__content-title">Fibrade Carbono</h3>
-                            <p class="block__content-text text">Maior proteção possível para a sua Bikcraft com fibra de carbono.</p>
                         </div>
                     </div>
                 </div>
@@ -155,6 +141,11 @@
     color: var(--text-color);
     margin-bottom: 12px;
 }
+.item__informations-block {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+}
 .block__content {
     max-width: 213px;
     margin-bottom: 32px;
@@ -173,9 +164,7 @@
     line-height: 20px;
 }
 .item__informations {
-    display: flex;
-    padding: 32px 60px 0 32px;
-    gap: 25px;
+    padding: 32px 45px 0 32px;
     margin-bottom: 40px;
 }
 .item__specifications {
@@ -204,8 +193,10 @@ import { BaseButton } from '../../ui';
 const props = defineProps({
     specifications: Object
 })
-
 function getImageUrl (name) {
     return new URL('../../../assets/img/' + name, import.meta.url).href;
+}
+function getImageUrlIcon (name) {
+    return new URL('../../../assets/img/icon/' + name, import.meta.url).href;
 }
 </script>
