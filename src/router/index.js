@@ -3,6 +3,7 @@ import index from '../pages/index.vue'
 import biciclets from '../pages/bicicletas/index.vue'
 import seguros from '../pages/seguros/index.vue'
 import contact from '../pages/contact/index.vue'
+import moreInfoPage from '../pages/moreInfo/index.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +15,12 @@ const router = createRouter({
     {
       path: '/bicicletas',
       component: biciclets
+    },
+    {
+      path: '/bicicletas/:id',
+      name: 'moreInfo',
+      component: moreInfoPage,
+      props: true
     },
     {
       path: '/seguros',

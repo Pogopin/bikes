@@ -9,7 +9,7 @@
 
 <style scoped>
 .header-inner {
-    background-color: var(--bg-color);
+    background-color: var(--bg-second-color);
     padding: 60px 0 60px;
     margin-bottom: 60px;
 }

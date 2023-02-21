@@ -12,7 +12,7 @@
 <script setup>
 import { Medida, Galery, Tecnologia, Brands, Reviews, Tarif } from '../components/widgets'
 import { useBikesStore } from '../stores/bikesStore'
-import { computed, onBeforeMount, onMounted } from 'vue'
+import { computed, onBeforeMount } from 'vue'
 
 const bikesStore = useBikesStore();
 const bikesData = computed(() => bikesStore.getBikesData);
