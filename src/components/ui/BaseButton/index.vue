@@ -19,6 +19,7 @@
     cursor: pointer;
     background-color: var(--accent-color);
     border: none;
+    text-transform: uppercase;
 }
 .custom_button {
     color: var(--light-grey-color);
