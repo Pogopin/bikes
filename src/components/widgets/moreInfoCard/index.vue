@@ -77,7 +77,6 @@
     gap: 60px;
 }
 .img__info {
-    max-width: 560px;
     height: 440px;
 }
 .img__info img {
