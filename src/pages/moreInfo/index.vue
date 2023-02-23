@@ -3,7 +3,7 @@
   <div v-else>
     <HeaderInner
       :text="'R$ ' + moreInfoData.price.toString()"
-      :title="title[0]"
+      :title="title"
     />
     <MoreInfoCard
       :specifications="moreInfoData"
@@ -24,7 +24,7 @@
 <script setup>
 import { HeaderInner, MoreInfoCard, Galery, Insurance } from '../../components/widgets';
 import { useBikesStore } from '../../stores/bikesStore';
-import { defineProps, computed, onBeforeMount, ref } from 'vue';
+import { defineProps, computed, onBeforeMount } from 'vue';
 
 const bikesStore = useBikesStore();
 const bikesMoreInfo = computed(() => bikesStore.getBikesData);
@@ -33,7 +33,12 @@ const props = defineProps({
     id: String
 });
 const moreInfoData = computed(() => bikesMoreInfo.value.find(el => el.id == props.id));
-const title = moreInfoData.value.title.split(' ');
+const title = computed(() => {
+  const split =  moreInfoData.value.title.split(' ');
+  const titleMerge = split[0] + ' ' + split[1];
+  return titleMerge;
+  
+});
 onBeforeMount(() => {
   bikesStore.getBikes();
 });

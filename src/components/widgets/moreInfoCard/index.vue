@@ -48,7 +48,6 @@
                     </ul>
                 </div>           
             </div>
-
         </div>
     </section>
 </template>
@@ -77,7 +76,7 @@
     gap: 60px;
 }
 .img__info {
-    max-width: 560px;
+    /* max-width: 560px; */
     height: 440px;
 }
 .img__info img {
@@ -112,7 +111,6 @@
     padding: 4px 2px 4px 26px;
     background-color: var(--bg-color);
     border-radius: 5px;
-    
 }
 .item__block-content p:last-of-type {
     margin-top: 12px;
