@@ -25,6 +25,7 @@
                     <div class="item__content-btn">
                         <BaseButton
                             :title="'MAIS SOBRE'"
+							@click="$router.push({ name: 'moreInfo', params: { id: props.extendedData.id}})"
                         >
                         <i class="fa-solid fa-arrow-right-long"></i>
                         </BaseButton>

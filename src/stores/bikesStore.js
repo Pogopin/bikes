@@ -25,10 +25,10 @@ export const useBikesStore = defineStore(id, {
             img: `bicicleta${i+1}.jpg`,
             imgFull: `bicicleta${i+1}-full.jpg`,
             characteristics: [
-              {name: 'Motor Elétrico', icon: `eletrica.svg`},
-              {name: 'Fibra de Carbono', icon: `lines.svg`},
-              {name: '40km/h', icon: `velocidade.svg`},
-              {name: 'Rastreador', icon: `rastreador.svg`}
+              {name: 'Motor Elétrico', icon: 'eletrica.svg'},
+              {name: 'Fibra de Carbono', icon: 'lines.svg'},
+              {name: '40km/h', icon: 'velocidade.svg'},
+              {name: 'Rastreador', icon: 'rastreador.svg'}
             ]
           }
         });

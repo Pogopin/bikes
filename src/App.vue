@@ -22,7 +22,6 @@
 <script setup>
 import { RouterView } from 'vue-router'
 import { Header, Footer, Contacts } from '../src/components/sections/index'
-// import { Contacts } from '../src/components/widgets/index'
 </script>
 
 
