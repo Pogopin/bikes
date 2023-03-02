@@ -18,6 +18,11 @@
     </header>
 </template>
 <style scoped>
+.router-link-active.menu__link {
+    position: relative;
+    padding-bottom: 3px;
+    border-bottom: 2px solid white;
+}
 .header {
     padding: 32px 0 32px;
     background-color: var(--bg-color);

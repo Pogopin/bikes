@@ -13,7 +13,9 @@ const ExtendedBikeCard = defineAsyncComponent(() => import('./extendedBikeCard/i
 const BikesInfo = defineAsyncComponent(() => import('./bikesInfo/index.vue'))
 const MoreInfoCard = defineAsyncComponent(() => import('./moreInfoCard/index.vue'))
 const Insurance = defineAsyncComponent(() => import('./insurance/index.vue'))
+const Advantages = defineAsyncComponent(() => import('./advantages/index.vue'))
+const Questions = defineAsyncComponent(() => import('./questions/index.vue'))
 
 export {
-  Medida, Galery, Tecnologia, Brands, BikeCard, Reviews, Tarif, TarifCard, HeaderInner, ExtendedBikeCard, BikesInfo, MoreInfoCard, Insurance
+  Medida, Galery, Tecnologia, Brands, BikeCard, Reviews, Tarif, TarifCard, HeaderInner, ExtendedBikeCard, BikesInfo, MoreInfoCard, Insurance, Advantages, Questions
 }

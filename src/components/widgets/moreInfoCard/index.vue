@@ -48,7 +48,6 @@
                     </ul>
                 </div>           
             </div>
-
         </div>
     </section>
 </template>
@@ -111,7 +110,6 @@
     padding: 4px 2px 4px 26px;
     background-color: var(--bg-color);
     border-radius: 5px;
-    
 }
 .item__block-content p:last-of-type {
     margin-top: 12px;

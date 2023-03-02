@@ -6,9 +6,10 @@
     <Tecnologia />
     <Brands />
     <Reviews />
-    <Tarif />
+    <Tarif
+      :visibleTitle="true"
+    />
 </template>
-
 <script setup>
 import { Medida, Galery, Tecnologia, Brands, Reviews, Tarif } from '../components/widgets'
 import { useBikesStore } from '../stores/bikesStore'
