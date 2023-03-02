@@ -9,18 +9,12 @@
   />
   <Advantages />
   <Questions />
-
-  
 </template>
 <style scoped>
 .mt {
   margin-top: -60px;
 }
-
 </style>
 <script setup>
-import { HeaderInner, Tarif, Advantages, Questions } from '../../components/widgets'
-
-
-
+import { HeaderInner, Tarif, Advantages, Questions } from '../../components/widgets';
 </script>
