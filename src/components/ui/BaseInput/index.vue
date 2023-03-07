@@ -1,17 +1,15 @@
 <template>
-    <div class="form-input">
-        <input class="input"
-             v-model="val"
-            :type="props.type"
-            :name="props.name"
-            :id="props.name"
-            :placeholder="props.placeholder"
-             :checked="props.value"
-
-        >
-        <label :for="props.name">{{ props.label }}</label>
-    </div>
-    
+  <div class="form-input">
+    <input class="input"
+      v-model="val"
+      :type="props.type"
+      :name="props.name"
+      :id="props.name"
+      :placeholder="props.placeholder"
+      :checked="props.value"
+    >
+    <label :for="props.name">{{ props.label }}</label>
+  </div>
 </template>
 <style scoped>
 .input {
