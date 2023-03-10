@@ -26,6 +26,21 @@
             <div class="form-message__item">
                 <form class="form">
                     <div class="form__input">
+
+                        <div
+                            v-for="tag in config"
+                            :key="tag.id"
+                            :class="tag.class"
+                        >
+                            <component
+                                :is="tag.tag"
+                                :label="tag.label"
+                                :name="tag.name"
+                                :placeholder="tag.placeholder"
+                                :type="tag.type"
+                                @update:value="(val) => formData.name = val"
+                            />
+                        </div>
                         <div class="input__block">
                             <BaseInput
                                 label="Nome"
@@ -73,6 +88,7 @@
         </div>
     </section>
 </template>
+
 <style scoped>
 /* 
 .block {
@@ -102,11 +118,13 @@
 .form__input {
     display: flex;
     gap: 20px;
-    
+
 }
 .input__block {
     flex-basis: 100%;
+  border: 1px solid red;
 }
+
 .send-message {
     margin-bottom: 120px;
 }
@@ -187,18 +205,20 @@
     border-radius: 5px;
 }
 </style>
+
 <script setup>
-import { BaseButton, BaseInput } from '../../ui/index';
-import { ref } from 'vue';
+import { BaseButton, BaseInput } from '../../ui/index'
+import { ref, resolveComponent } from 'vue'
+import { messageFieldsConfig } from '../../../config/messageFields'
+
+const config = JSON.parse(JSON.stringify(messageFieldsConfig))
+
+const componenttt = resolveComponent('ui/BaseInput')
+
 const formData = ref({
     name: '',
     telephone: '',
     email: '',
     message: ''
 })
-// function inp(value) {
-//     console.log('имя', value);
-    
-// }
-
 </script>

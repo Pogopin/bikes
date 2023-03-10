@@ -118,9 +118,7 @@
 </style>
 
 <script setup>
-import { locationData } from '../../../config/locationConfig.js';
-import { YmapPlugin } from 'vue-yandex-map';
-import { ref } from 'vue';
+import { locationData } from '../../../config/locationConfig.js'
 
 // const iframeCode = ref(
 //     '<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Afc1095825bfa463cf13781380e794b1d8697f16fd5acfa2978c558df92310440&amp;source=constructor" width="560" height="260" frameborder="0"></iframe>'

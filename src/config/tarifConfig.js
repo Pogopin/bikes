@@ -2,8 +2,8 @@ export const data = [
     {
         id: 1,
         tarifInfo: {
-            name: 'PRATA',
-            price: 'R$ 199'
+            name: 'tarifInfo.name',
+            price: 'tarifInfo.price'
         },
         specification: [
             { name: 'Duas trocas por ano' },

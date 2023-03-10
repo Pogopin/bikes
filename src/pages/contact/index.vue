@@ -6,8 +6,9 @@
   <div>
     Contact-page
   </div>
+  <Message />
 </template>
 <script setup>
-
+import { Message } from '../../components/widgets'
 import { HeaderInner } from '../../components/widgets'
 </script>
