@@ -15,9 +15,11 @@
             <div class="more-info__item item">
                 <p class="item__text">A Nimbus Stark é a melhor Bikcraft já criada pela nossa equipe. Ela vem equipada com os melhores acessórios, o que garante maior velocidade. </p>
                 <div class="item__block">
-                    <BaseButton
-                        title="SELECIONE A SUA"
-                    />
+                    <router-link :to="{name: 'request', params: { id: props.specifications.id}, query: { plan: 'private' }}">
+                        <BaseButton
+                            title="SELECIONE A SUA"
+                        />
+                    </router-link>
                     <div class="item__block-content">
                         <p class="entrega">entrega em 5 dias</p>
                         <p class="estoque">18 em estoque</p>
@@ -195,5 +197,8 @@ function getImageUrl (name) {
 }
 function getImageUrlIcon (name) {
     return new URL('../../../assets/img/icon/' + name, import.meta.url).href;
+}
+function showId(id) {
+    console.log(id)
 }
 </script>

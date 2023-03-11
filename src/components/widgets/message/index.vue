@@ -55,7 +55,7 @@
                         />
                     </div>
                     <div class="input__block">
-                        <BaseInput                                 
+                        <BaseTextArea                                 
                             label="Mensagem"
                             name="message-text"
                             placeholder="O que você precisa?"
@@ -82,22 +82,6 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-.input-name {
-    position: relative;
-    padding: 12px;
-    background-color: var(--tree-text-color);
-    border: 1px solid #EDEDED;
-    border-radius: 5px;
-    width: 100%;
-}
-.label {
-    display: block;
-    margin-bottom: 4px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: var(--bg-second-color);
 }
 .form__input {
     display: flex;
@@ -188,7 +172,7 @@
 }
 </style>
 <script setup>
-import { BaseButton, BaseInput } from '../../ui/index';
+import { BaseButton, BaseInput, BaseTextArea } from '../../ui/index';
 import { ref } from 'vue';
 const formData = ref({
     name: '',

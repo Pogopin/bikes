@@ -4,6 +4,7 @@ import biciclets from '../pages/bicicletas/index.vue'
 import seguros from '../pages/seguros/index.vue'
 import contact from '../pages/contact/index.vue'
 import moreInfoPage from '../pages/moreInfo/index.vue'
+import requestPage from '../pages/request/index.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,6 +30,12 @@ const router = createRouter({
     {
       path: '/Contato',
       component: contact
+    },
+    {
+      path: '/request/:id',
+      name: 'request',
+      component: requestPage,
+      props: true
     }
   ]
 })

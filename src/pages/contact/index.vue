@@ -3,11 +3,10 @@
     text="RESPOSTAS EM ATÉ 24H"
     title="nosso contato"
   />
-  <div>
-    Contact-page
-  </div>
+  <SendMessage />
+  <Location />
 </template>
 <script setup>
 
-import { HeaderInner } from '../../components/widgets'
+import { HeaderInner, SendMessage, Location } from '../../components/widgets'
 </script>
