@@ -1,6 +1,6 @@
 <template>
     <label class="label" :for="props.name">{{ props.label }}</label>
-    <input v-if="props.type !== 'textarea'" 
+    <input
         class="input-name"
         v-model="val"
         :type="props.type"
@@ -8,13 +8,6 @@
         :placeholder="props.placeholder"
                         
     >
-    <textarea v-else
-        class="input-name" 
-        v-model="val"
-        rows="8"
-        :name="props.name" 
-        :placeholder="props.placeholder"
-    ></textarea>
 </template>
 <style scoped>
 .input-name {
