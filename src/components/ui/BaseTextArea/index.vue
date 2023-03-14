@@ -1,15 +1,15 @@
 <template>
     <label class="label" :for="props.name">{{ props.label }}</label>
-    <input
-        class="input-name"
+    <textarea
+        class="input-name" 
         v-model="val"
-        :type="props.type"
-        :name="props.name"
+        rows="8"
+        :name="props.name" 
         :placeholder="props.placeholder"
-                        
-    >
+    ></textarea>
 </template>
 <style scoped>
+
 .input-name {
     position: relative;
     padding: 12px;
@@ -27,9 +27,9 @@
     color: var(--bg-second-color);
 }
 </style>
+
 <script setup>
 import { defineProps, defineEmits, computed } from 'vue';
-
 const emits = defineEmits([ 'update:value' ]);
 const props = defineProps({
     value: {
@@ -54,6 +54,10 @@ const props = defineProps({
     label: {
         type: String,
         required: true
+    },
+    rows: {
+        type: String,
+        default: '8'
     }
 })
 
@@ -67,3 +71,4 @@ const val = computed({
 })
 
 </script>
+

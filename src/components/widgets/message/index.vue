@@ -26,22 +26,17 @@
             <div class="form-message__item">
                 <form class="form">
                     <div class="form__input">
-                        <div class="input__block">
-                            <BaseInput
-                                label="Nome"
-                                name="inName"
-                                placeholder="Seu nome"
-                                type="text"
-                                @update:value="(val) => formData.name = val"
-                            />
-                        </div>
-                        <div class="input__block">
-                            <BaseInput                                 
-                                label="Telefone"
-                                name="inTelefone"
-                                placeholder="(22) 99999-9999"
-                                type="text"
-                                @update:value="(val) => formData.telephone = val"
+                        <div class="input__block"
+                            v-for="el in formInputData"
+                            :key="el.id"
+                        >
+                            <component
+                                :is="currentComponent(el.component)"
+                                :label="el.label"
+                                :name="el.name"
+                                :placeholder="el.placeholder"
+                                :type="el.type"
+                                @update:value="(val) => updateFormData(el.property, val)"
                             />
                         </div>
                     </div>
@@ -51,16 +46,16 @@
                             name="inEmail"
                             placeholder="contato@email.com"
                             type="text"
-                            @update:value="(val) => formData.email = val"
+                            @update:value="(val) => updateFormData('email', val)"
                         />
                     </div>
                     <div class="input__block">
-                        <BaseInput                                 
+                        <BaseTextArea                                 
                             label="Mensagem"
                             name="message-text"
                             placeholder="O que você precisa?"
                             type="textarea"
-                            @update:value="(val) => formData.message = val"
+                            @update:value="(val) => updateFormData('message', val)"
                         />
                     </div>
                     <div class="form__button">
@@ -82,22 +77,6 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-.input-name {
-    position: relative;
-    padding: 12px;
-    background-color: var(--tree-text-color);
-    border: 1px solid #EDEDED;
-    border-radius: 5px;
-    width: 100%;
-}
-.label {
-    display: block;
-    margin-bottom: 4px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: var(--bg-second-color);
 }
 .form__input {
     display: flex;
@@ -188,17 +167,23 @@
 }
 </style>
 <script setup>
-import { BaseButton, BaseInput } from '../../ui/index';
-import { ref } from 'vue';
+import { BaseButton, BaseInput, BaseTextArea } from '../../ui/index';
+import { ref, markRaw } from 'vue';
+import { formInputData } from '../../../config/formInputConfig.js'
 const formData = ref({
     name: '',
     telephone: '',
     email: '',
     message: ''
 })
-// function inp(value) {
-//     console.log('имя', value);
-    
-// }
+const components = {
+    BaseInput
+}
+function currentComponent(name) {
+    return markRaw(components[name])
+}
+function updateFormData(propertyForm, value) {
+    formData.value[propertyForm] = value;
+}
 
 </script>
