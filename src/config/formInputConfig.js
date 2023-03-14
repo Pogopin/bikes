@@ -14,7 +14,7 @@ export const formInputData = [
 		label: 'Telefone',
         name: 'inTelefone',
         placeholder: '(22) 99999-9999',
-        type="text",
-        property: 'telefone'
+        type: "text",
+        property: 'telephone'
     }
 ]

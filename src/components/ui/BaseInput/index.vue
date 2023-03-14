@@ -49,7 +49,8 @@ const props = defineProps({
     },
     placeholder: {
         type: String,
-        required: true
+        required: true,
+        default: ''
     },
     label: {
         type: String,

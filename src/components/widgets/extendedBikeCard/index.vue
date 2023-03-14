@@ -10,10 +10,12 @@
                     <h2
                         :class="{'title': props.extendedData.imgFull === 'bicicleta2-full.jpg'}"
                         class="item__content-title">{{title[0]}}
+                    >
                     </h2>
                     <p 
                         :class="{'text': props.extendedData.imgFull === 'bicicleta2-full.jpg'}"
                         class="item__content-text">A {{title[0]}} Stark é a melhor Bikcraft já criada pela nossa equipe. Ela vem equipada com os melhores acessórios, o que garante maior velocidade.
+                    >
                     </p>
                     <ul class="item__content-list">
                         <li

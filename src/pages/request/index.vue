@@ -1,12 +1,25 @@
 <template>
-    <div>sdfsdf</div>
+    <HeaderInner
+        text="COTAÇÕES NO SEU EMAIL."
+        title="solicite um orçamento."
+    />
+    <OrderForm
+        :bikes="listBikes"
+    />
 </template>
 
 <script setup>
 import { defineProps, computed, onBeforeMount } from 'vue';
+import { HeaderInner, OrderForm } from '../../components/widgets/';
+import { useBikesStore } from '../../stores/bikesStore';
 
 const props = defineProps({
     id: String
-})
-console.log(props.id)
+});
+const bikesStore = useBikesStore();
+const listBikes = computed(() => bikesStore.getBikesData);
+onBeforeMount(() => {
+  bikesStore.getBikes();
+});
+// console.log(props.id)
 </script>
