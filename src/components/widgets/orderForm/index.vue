@@ -20,162 +20,113 @@
                 </div>
                 <div class="item__options-status status">
                     <h4 class="item__title">ESCOLHA A SUA:</h4>
-                    <div>
-                        <RadioButton
+                    <div v-for="(el, i) in chooseBike"
+                        :key="el.id"
+                    >
+                        <component
+                            :is="currentComponent(el.className)"
                             class="mod-display"
-                            name="selectBike"
-                            :checked="false"
-                            :value="'Nimbus Stark'"
-                            @change="isActive($event)"
-                        />
-                    </div>
-                    <div>
-                        <RadioButton
-                            class="mod-display"
-                            name="selectBike"
-                            :checked="false"
-                            :value="'Magic Migth'"
-                            @change="isActive($event)"
-                        />
-                    </div>
-                    <div>
-                        <RadioButton
-                            class="mod-display"
-                            name="selectBike"
-                            :checked="false"
-                            :value="'Nebula Cosmic'"
-                            @change="isActive($event)"
+                            :name="el.name"
+                            :checked="el.cheched"
+                            :value="el.value"
+                            @change="isActive($event, i)"
+                            @checked:value="(val) => updateFormData(val)"
                         />
                         <div class="status__info-bike none">
-                            <ul class="status__list">
-                                <li>Motor Elétrico</li>
-                                <li>Fibra de Carbono</li>
-                                <li>40km/h</li>
-                                <li>Rastreador</li>
-                            </ul>
+                            <div class="status__info-wrapper">
+                                <ul class="status__list">
+                                    <li
+                                        v-for="el in props.bikes[i].characteristics"
+                                        :key="el.name"
+                                    ><img :src="getImageUrlIcon(el.icon)" alt="image">{{el.name}}</li>
+                                </ul>
+                                <div class="status__info-bike-img">
+                                    <img :src="getImageUrl(props.bikes[i].imgFull)" alt="image">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-                    
                 </div>
-                
             </div>
             <div class="form-request__item item">
                 <form class="form">
                     <div class="form__information information">
                         <h4 class="information__title">Dados Pessoais</h4>
                         <div class="personal__information-block">
-                            <div>
-                                <BaseInput
-                                    label="Nome"
-                                    placeholder=""
-                                    name="Name"
-                                    type="text"
-                                />
-                            </div>
-                            <div>
-                                <BaseInput
-                                    label="Sobrenome"
-                                    placeholder=""
-                                    name="Surname"
-                                    type="text"
-                                />
-                            </div>
-                            <div class="input">
-                                <BaseInput
-                                    label="CPF"
-                                    placeholder="000.000.000-00"
-                                    name="CPF"
-                                    type="text"
-                                />
-                            </div>
-                            <div class="input">
-                                <BaseInput
-                                    label="Email"
-                                    placeholder=""
-                                    name="CPF"
-                                    type="text"
+                            <div
+                                v-for="(el, i) in personalData"
+                                :key="el.id"
+                                :class="{'input': i > 1}"
+                            >
+                                <component
+                                    :is="currentComponent(el.component)"
+                                    :label="el.label"
+                                    :placeholder="el.placeholder"
+                                    :name="el.name"
+                                    :type="el.type"
+                                    
                                 />
                             </div>
                         </div>
                     </div>
-
                     <div class="form__delivery delivery">
                         <h4 class="delivery__title">delivery</h4>
                         <div class="delivery-block">
-
-                            <div>
-                                <BaseInput
-                                    label="CEP"
-                                    placeholder=""
-                                    name="pocket"
-                                    type="text"
+                            <div
+                                v-for="el in deliveryData"
+                                :key="el.id"
+                            >
+                                <component
+                                    :is="currentComponent(el.component)"
+                                    :label="el.label"
+                                    :placeholder="el.placeholder"
+                                    :name="el.name"
+                                    :type="el.type"
                                 />
                             </div>
-                            <div>
-                                <BaseInput
-                                    label="Número"
-                                    placeholder=""
-                                    name="Number"
-                                    type="text"
-                                />
-                            </div>
-                            <div>
-                                <BaseInput
-                                    label="Logradouro"
-                                    placeholder="Rua, avenida..."
-                                    name="Public"
-                                    type="text"
-                                />
-                            </div>
-                            <div>
-                                <BaseInput
-                                    label="Bairro"
-                                    placeholder=""
-                                    name="Area"
-                                    type="text"
-                                />
-                            </div>
-                            <div>
-                                <BaseInput
-                                    label="Cidade"
-                                    placeholder="Rua, avenida..."
-                                    name="City"
-                                    type="text"
-                                />
-                            </div>
-                            <div>
-                                <BaseInput
-                                    label="Estado"
-                                    placeholder=""
-                                    name="State"
-                                    type="text"
-                                />
-                            </div>   
                         </div>
+                        <BaseCheckbox class="mb"
+                            name="agreement"
+                            :checked="false"
+                            :value="'li e aceito os termos e condições.'"
+                        />
 
                         <BaseButton
                             title="SOLICITAR ORÇAMENTO"
                         />
+
                     </div>
                 </form>
             </div>
         </div>
     </section>
-    
 </template>
 <style scoped>
+.mb {
+    margin-bottom: 16px;
+}
+.none {
+    display: none;
+}
 .status__list {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
     color: var(--bikes-card-color);
-    padding-left: 40px;
+    padding-left: 31px;
     padding-bottom: 10px;
 }
 .status__list li {
     margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 35px;
+}
+.status__list li img {
+    position: absolute;
+    left: 0;
 }
 .status__title {
     font-weight: 500;
@@ -189,6 +140,17 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     margin-bottom: 20px;
+}
+.status__info-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.status__info-bike-img {
+    max-width: 146px;
+}
+.status__info-bike-img img {
+    border-radius: 5px;
 }
 /* -------------------------------------------------------------- */
 .form-request__item {
@@ -283,7 +245,6 @@ input {
     gap: 20px;
     margin-bottom: 40px;
 }
-
 .item__options-status {
     max-width: 340px;
 }
@@ -310,42 +271,47 @@ input {
 </style>
 
 <script setup>
-import { onMounted, defineProps } from 'vue';
-import { RadioButton, BaseInput, BaseButton } from '../../ui';
-import { chooseBike } from '../../../config/chooseBike.js';
-
+import { onMounted, defineProps, markRaw } from 'vue';
+import { RadioButton, BaseInput, BaseButton, BaseCheckbox } from '../../ui';
+import { chooseBike } from '@/config/chooseBike.js';
+import { personalData } from '@/config/personalDataConfig.js';
+import { deliveryData } from '@/config/deliveryDataConfig.js';
+function updateFormData(value) {
+    console.log(value)
+}
+const components = {
+    BaseInput, RadioButton
+}
+function currentComponent(name) {
+    return markRaw(components[name])
+}
 const props = defineProps({
     bikes: Object
 })
-onMounted(()=> {
-    const up_names = document.getElementsByName("selectBike");
-    console.log(up_names);
-    console.log(chooseBike);
-    // console.log(props.bikes);
-    // [ { "name": "Motor Elétrico", "icon": "eletrica.svg" },
-    //   { "name": "Fibra de Carbono", "icon": "lines.svg" },
-    //   { "name": "40km/h", "icon": "velocidade.svg" },
-    //   { "name": "Rastreador", "icon": "rastreador.svg" } 
-    // ]
-})
-
-function isActive(event) {
-    // console.log(event.target)
-    if(event.target.name == 'selectBike') {
+function isActive(event, index) {
+    const info = document.querySelectorAll('.status__info-bike');
+    if(event.target.name === 'selectBike') { //проверка, к какой группе относится чекбокс
         if(document.querySelector('.radio.back')) {
-            document.querySelector('.radio.back').classList.remove('back');
+            document.querySelector('.radio.back').classList.remove('back');//back -- активный класс для группы 'selectBike'
             event.target.parentNode.classList.add('back');
+
+            info.forEach(item => {item.classList.add('none')});//чтобы отобразить инфо под чекбоксом, сначала скрываем ранее открытое инфо
+            info[index].classList.remove('none');//открываем нужное инфо по индексу
         }
         else {
             event.target.parentNode.classList.add('back');
+            info[index].classList.remove('none');
         }       
-        
     }
-    if(event.target.name == 'term') {
-        document.querySelector('.radio.active').classList.remove('active');
+    if(event.target.name === 'term') {
+        document.querySelector('.radio.active').classList.remove('active');//active -- активный класс для группы 'term'
         event.target.parentNode.classList.add('active');
     }
-    
 }
-
+function getImageUrl (name) {
+    return new URL('../../../assets/img/' + name, import.meta.url).href;
+}
+function getImageUrlIcon (name) {
+    return new URL('../../../assets/img/icon/' + name, import.meta.url).href;
+}
 </script>

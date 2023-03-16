@@ -43,9 +43,6 @@ const props = defineProps({
     type: {
         type: String,
         default: 'text',
-        validator(value) {
-            return ['text', 'textarea'].includes(value);
-        }
     },
     placeholder: {
         type: String,

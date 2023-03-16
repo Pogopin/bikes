@@ -19,18 +19,7 @@
 </template>
 <script setup>
 import { defineProps, defineEmits, computed, ref, onMounted } from 'vue';
-// onMounted(() => {
-//     const parentBlock = document.querySelector('.item__body');
-//     const children = parentBlock.querySelectorAll('.radio__real');
-
-//     children.forEach(el => {
-//         el.addEventListener('change', (event) => {
-//             document.querySelector('.radio.active').classList.remove('active');
-//             el.parentNode.classList.add('active');
-           
-//         })
-//     });
-// })
+const emits = defineEmits(['checked:value']);
 const props = defineProps({
     name: {
         type: String,
@@ -49,7 +38,8 @@ const val = computed({
         return props.value;
     },
     set(value) {
-        console.log(value)
+        // console.log(value)
+        emits('checked:value', value);
     }
 })
 </script>
