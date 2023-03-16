@@ -22,5 +22,4 @@ const Policy = defineAsyncComponent(() => import('./policy/index.vue'))
 
 export {
   Medida, Galery, Tecnologia, Brands, BikeCard, Reviews, Tarif, TarifCard, HeaderInner, ExtendedBikeCard, BikesInfo, MoreInfoCard, Insurance, Advantages, Questions,
-  SendMessage, Location, OrderForm, Policy
 }

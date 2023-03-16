@@ -111,9 +111,6 @@
     padding-left: 50px;
 }
 </style>
-
 <script setup>
 import { locationData } from '../../../config/locationConfig.js';
-import { ref, onMounted } from 'vue';
-
 </script>
