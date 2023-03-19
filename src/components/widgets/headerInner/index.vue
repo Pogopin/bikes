@@ -27,11 +27,12 @@
     color: var(--text-color);
 }
 </style>
+
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps } from 'vue'
+
 const props = defineProps({
     text: String,
     title: String
 })
 </script>
-

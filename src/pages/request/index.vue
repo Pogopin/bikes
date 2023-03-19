@@ -9,17 +9,18 @@
 </template>
 
 <script setup>
-import { defineProps, computed, onBeforeMount } from 'vue';
-import { HeaderInner, OrderForm } from '../../components/widgets/';
-import { useBikesStore } from '../../stores/bikesStore';
+import { defineProps, computed, onBeforeMount } from 'vue'
+import { HeaderInner, OrderForm } from '../../components/widgets/'
+import { useBikesStore } from '../../stores/bikesStore'
 
-const props = defineProps({
+defineProps({
     id: String
-});
-const bikesStore = useBikesStore();
-const listBikes = computed(() => bikesStore.getBikesData);
+})
+
+const bikesStore = useBikesStore()
+const listBikes = computed(() => bikesStore.getBikesData)
+
 onBeforeMount(() => {
-  bikesStore.getBikes();
-});
-// console.log(props.id)
+  bikesStore.getBikes()
+})
 </script>

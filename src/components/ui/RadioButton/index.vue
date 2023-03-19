@@ -1,25 +1,24 @@
 <template>
     <label class="radio"
-        :class="{ 'active': props.checked }"
+        :class="{ 'active': isModelValue }"
     >
         <input 
             type="radio"
             class="radio__real"
-            :checked="props.checked"
             :name="props.name"
             :value="props.value"
             v-model="val"
-            
         >
             <span class="radio__fake"></span>
             <span class="radio__title">{{props.value}}</span>
-            
     </label>
-    
 </template>
+
 <script setup>
-import { defineProps, defineEmits, computed, ref, onMounted } from 'vue';
-const emits = defineEmits(['checked:value']);
+import { defineProps, defineEmits, computed } from 'vue'
+
+const emits = defineEmits([ 'checked:value' ])
+
 const props = defineProps({
     name: {
         type: String,
@@ -31,18 +30,24 @@ const props = defineProps({
     },
     value: {
         type: String
+    },
+    modelValue: {
+      type: String
     }
 })
+
+const isModelValue = computed(() => props.modelValue === props.value)
+
 const val = computed({
-    get() {
-        return props.value;
+    get () {
+        return props.modelValue
     },
-    set(value) {
-        // console.log(value)
-        emits('checked:value', value);
+    set (value) {
+        emits('checked:value', value)
     }
 })
 </script>
+
 <style scoped>
 .radio__real {
     display: none;

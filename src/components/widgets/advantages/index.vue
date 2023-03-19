@@ -51,8 +51,10 @@
     color: var(--accent-text-color);
 }
 </style>
+
 <script setup>
 import { data } from '../../../config/advantagesConfig.js'
+
 function getImageUrlIcon (name) {
     return new URL('../../../assets/img/icon/' + name, import.meta.url).href
 }

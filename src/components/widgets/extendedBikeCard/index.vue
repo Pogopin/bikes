@@ -37,6 +37,7 @@
         </div>
     </div>
 </template>
+
 <style scoped>
 .bikes-info__item {
     padding: 60px 0 60px;
@@ -123,17 +124,21 @@
     bottom: 0px;
 }
 </style>
+
 <script setup>
-import { defineProps } from 'vue';
-import { BaseButton } from '../../ui';
+import { defineProps } from 'vue'
+import { BaseButton } from '../../ui'
+
 const props = defineProps({
     extendedData: Object
 })
-const title = props.extendedData.title.split(' ');
+
+const title = props.extendedData.title.split(' ')
+
 function getImageUrl (name) {
-    return new URL('../../../assets/img/' + name, import.meta.url).href;
+    return new URL('../../../assets/img/' + name, import.meta.url).href
 }
 function getImageUrlIcon (name) {
-    return new URL('../../../assets/img/icon/' + name, import.meta.url).href;
+    return new URL('../../../assets/img/icon/' + name, import.meta.url).href
 }
 </script>

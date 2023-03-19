@@ -7,15 +7,15 @@
                     
                     <RadioButton
                         name="term"
-                        :checked="true"
-                        :value="'Bikcraft'"
-                        @change="isActive($event)"
+                        v-model="valueTopRadio"
+                        value="Bikcraft"
+                        @checked:value="changeTopRadio"
                     />
                     <RadioButton
                         name="term"
-                        :checked="false"
-                        :value="'Seguro'"
-                        @change="isActive($event)"
+                        v-model="valueTopRadio"
+                        value="Seguro"
+                        @checked:value="changeTopRadio"
                     />
                 </div>
                 <div class="item__options-status status">
@@ -27,12 +27,14 @@
                             :is="currentComponent(el.className)"
                             class="mod-display"
                             :name="el.name"
-                            :checked="el.cheched"
+                            :checked="el.checked"
                             :value="el.value"
-                            @change="isActive($event, i)"
-                            @checked:value="(val) => updateFormData(val)"
+                            v-model="valueBottomRadio"
+                            @checked:value="(val) => changeBottomRadio(val)"
                         />
-                        <div class="status__info-bike none">
+                        <div class="status__info-bike"
+                          :class="{ 'none': valueBottomRadio !== el.value }"
+                        >
                             <div class="status__info-wrapper">
                                 <ul class="status__list">
                                     <li
@@ -49,7 +51,7 @@
                 </div>
             </div>
             <div class="form-request__item item">
-                <form class="form">
+                <form class="form" @submit.prevent="sendForm">
                     <div class="form__information information">
                         <h4 class="information__title">Dados Pessoais</h4>
                         <div class="personal__information-block">
@@ -85,7 +87,8 @@
                                 />
                             </div>
                         </div>
-                        <BaseCheckbox class="mb"
+                        <BaseCheckbox
+                            class="mb"
                             name="agreement"
                             :checked="false"
                             :value="'li e aceito os termos e condições.'"
@@ -93,6 +96,7 @@
 
                         <BaseButton
                             title="SOLICITAR ORÇAMENTO"
+
                         />
 
                     </div>
@@ -101,13 +105,16 @@
         </div>
     </section>
 </template>
+
 <style scoped>
 .mb {
     margin-bottom: 16px;
 }
+
 .none {
     display: none;
 }
+
 .status__list {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
@@ -164,7 +171,6 @@
     font-weight: 600;
     font-size: 12px;
     line-height: 24px;
-    letter-spacing: 1.5%;
     text-transform: uppercase;
     color: var(--accordion-body-text);
     margin-bottom: 20px;
@@ -225,7 +231,6 @@ input {
     line-height: 24px;
     text-transform: uppercase;
     color: var(--second-text-color);
-    letter-spacing: 1.5%;
     margin-bottom: 30px;
     padding-left: 10px;
     position: relative;
@@ -271,47 +276,46 @@ input {
 </style>
 
 <script setup>
-import { onMounted, defineProps, markRaw } from 'vue';
-import { RadioButton, BaseInput, BaseButton, BaseCheckbox } from '../../ui';
-import { chooseBike } from '@/config/chooseBike.js';
-import { personalData } from '@/config/personalDataConfig.js';
-import { deliveryData } from '@/config/deliveryDataConfig.js';
-function updateFormData(value) {
-    console.log(value)
+import { defineProps, markRaw, ref } from 'vue'
+import { RadioButton, BaseInput, BaseButton, BaseCheckbox } from '../../ui'
+import { chooseBike } from '../../../config/chooseBike'
+import { personalData } from '../../../config/personalDataConfig'
+import { deliveryData } from '../../../config/deliveryDataConfig'
+
+const valueTopRadio = ref('Bikcraft')
+
+const valueBottomRadio = ref('')
+
+function changeTopRadio (newValue) {
+  valueTopRadio.value = newValue
 }
+
+function changeBottomRadio (value) {
+  valueBottomRadio.value = value
+}
+
 const components = {
     BaseInput, RadioButton
 }
-function currentComponent(name) {
+
+function currentComponent (name) {
     return markRaw(components[name])
 }
+
 const props = defineProps({
     bikes: Object
 })
-function isActive(event, index) {
-    const info = document.querySelectorAll('.status__info-bike');
-    if(event.target.name === 'selectBike') { //проверка, к какой группе относится чекбокс
-        if(document.querySelector('.radio.back')) {
-            document.querySelector('.radio.back').classList.remove('back');//back -- активный класс для группы 'selectBike'
-            event.target.parentNode.classList.add('back');
 
-            info.forEach(item => {item.classList.add('none')});//чтобы отобразить инфо под чекбоксом, сначала скрываем ранее открытое инфо
-            info[index].classList.remove('none');//открываем нужное инфо по индексу
-        }
-        else {
-            event.target.parentNode.classList.add('back');
-            info[index].classList.remove('none');
-        }       
-    }
-    if(event.target.name === 'term') {
-        document.querySelector('.radio.active').classList.remove('active');//active -- активный класс для группы 'term'
-        event.target.parentNode.classList.add('active');
-    }
+function sendForm () {
+  console.log('Data sending...')
+  console.log('valueTopRadio :', valueTopRadio.value)
+  console.log('valueBottomRadio :', valueBottomRadio.value)
 }
+
 function getImageUrl (name) {
-    return new URL('../../../assets/img/' + name, import.meta.url).href;
+    return new URL('../../../assets/img/' + name, import.meta.url).href
 }
 function getImageUrlIcon (name) {
-    return new URL('../../../assets/img/icon/' + name, import.meta.url).href;
+    return new URL('../../../assets/img/icon/' + name, import.meta.url).href
 }
 </script>

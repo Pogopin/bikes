@@ -17,6 +17,7 @@
   </section>
   <div class="line-bottom"></div>
 </template>
+
 <style scoped>
 .insurance {
     padding: 60px 0 60px;
@@ -62,7 +63,7 @@
     background-color: var(--bg-color);
 }
 </style>
+
 <script setup>
 import { BaseButton } from '../../ui'
-
 </script>

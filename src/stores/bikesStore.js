@@ -15,6 +15,7 @@ export const useBikesStore = defineStore(id, {
     async getBikes () {
       try {
         const response = await fetch('https://fakestoreapi.com/products?limit=3')
+        console.log('response :', response)
         const data = await response.json()
         this.bikesData = data.map((el, i) => {
           return {

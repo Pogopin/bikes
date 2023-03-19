@@ -22,6 +22,7 @@
 		</div>
 	</section>
 </template>
+
 <style scoped>
 ul {
 	font-family: 'Roboto', sans-serif;

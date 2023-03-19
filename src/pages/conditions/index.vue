@@ -7,6 +7,5 @@
 </template>
 
 <script setup>
-import { HeaderInner, Policy } from '../../components/widgets';
-
+import { HeaderInner, Policy } from '../../components/widgets'
 </script>

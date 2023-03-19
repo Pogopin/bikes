@@ -10,13 +10,14 @@
         >
         <span class="checkbox__fake"></span>
         <span class="checkbox__title">{{props.value}}</span>
-              
     </label>
-    
 </template>
+
 <script setup>
-import { defineProps, defineEmits, computed } from 'vue';
-const emits = defineEmits(['checked:value']);
+import { defineProps, defineEmits, computed } from 'vue'
+
+const emits = defineEmits([ 'checked:value' ])
+
 const props = defineProps({
     name: {
         type: String,
@@ -30,16 +31,18 @@ const props = defineProps({
         type: String
     }
 })
+
 const val = computed({
-    get() {
-        return props.value;
+    get () {
+        return props.value
     },
-    set(value) {
+    set (value) {
         // console.log(value)
-        emits('checked:value', value);
+        emits('checked:value', value)
     }
 })
 </script>
+
 <style scoped>
 .checkbox {
     display: block;

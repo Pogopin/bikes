@@ -8,8 +8,8 @@
         :placeholder="props.placeholder"
     ></textarea>
 </template>
-<style scoped>
 
+<style scoped>
 .input-name {
     position: relative;
     padding: 12px;
@@ -29,8 +29,10 @@
 </style>
 
 <script setup>
-import { defineProps, defineEmits, computed } from 'vue';
-const emits = defineEmits([ 'update:value' ]);
+import { defineProps, defineEmits, computed } from 'vue'
+
+const emits = defineEmits([ 'update:value' ])
+
 const props = defineProps({
     value: {
         type: String,
@@ -43,8 +45,8 @@ const props = defineProps({
     type: {
         type: String,
         default: 'text',
-        validator(value) {
-            return ['text', 'textarea'].includes(value);
+        validator (value) {
+            return [ 'text', 'textarea' ].includes(value)
         }
     },
     placeholder: {
@@ -66,9 +68,8 @@ const val = computed({
     return ''
   },
   set (value) {
-    emits('update:value', value);
+    emits('update:value', value)
   }
 })
 
 </script>
-

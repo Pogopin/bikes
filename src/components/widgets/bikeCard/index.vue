@@ -6,6 +6,7 @@
         <p class="bikes__item-price">R$ {{ props.bikes_data.price}}</p>
     </div>
 </template>
+
 <style scoped>
 .bikes__item {
     max-width: 460px;
@@ -50,12 +51,16 @@
     align-items: center;
 }
 </style>
+
 <script setup>
 import { defineProps } from 'vue'
+
 const props = defineProps({
     bikes_data: Object
 })
-const title = props.bikes_data.title.split(' ');
+
+const title = props.bikes_data.title.split(' ')
+
 function getImageUrl (name) {
     return new URL('../../../assets/img/' + name, import.meta.url).href
 }

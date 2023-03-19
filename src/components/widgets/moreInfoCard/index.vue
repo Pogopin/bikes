@@ -53,6 +53,7 @@
         </div>
     </section>
 </template>
+
 <style scoped>
 .grid {
     display: grid;
@@ -186,19 +187,20 @@
     margin-bottom: 0;
 }
 </style>
+
 <script setup>
 import { defineProps } from 'vue'
-import { BaseButton } from '../../ui';
+import { BaseButton } from '../../ui'
+
 const props = defineProps({
     specifications: Object
 })
+
 function getImageUrl (name) {
-    return new URL('../../../assets/img/' + name, import.meta.url).href;
+    return new URL('../../../assets/img/' + name, import.meta.url).href
 }
+
 function getImageUrlIcon (name) {
-    return new URL('../../../assets/img/icon/' + name, import.meta.url).href;
-}
-function showId(id) {
-    console.log(id)
+    return new URL('../../../assets/img/icon/' + name, import.meta.url).href
 }
 </script>

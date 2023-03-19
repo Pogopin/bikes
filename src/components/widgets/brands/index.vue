@@ -59,6 +59,7 @@ td {
     padding-left: 110px;
 }
 </style>
+
 <script setup>
 function getImageUrl (name) {
     return new URL('../../../assets/img/brands/' + name, import.meta.url).href

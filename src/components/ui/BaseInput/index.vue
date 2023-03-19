@@ -28,9 +28,9 @@
 }
 </style>
 <script setup>
-import { defineProps, defineEmits, computed } from 'vue';
+import { defineProps, defineEmits, computed } from 'vue'
 
-const emits = defineEmits([ 'update:value' ]);
+const emits = defineEmits([ 'update:value' ])
 const props = defineProps({
     value: {
         type: String,
@@ -42,7 +42,7 @@ const props = defineProps({
     },
     type: {
         type: String,
-        default: 'text',
+        default: 'text'
     },
     placeholder: {
         type: String,
@@ -60,7 +60,7 @@ const val = computed({
     return ''
   },
   set (value) {
-    emits('update:value', value);
+    emits('update:value', value)
   }
 })
 
