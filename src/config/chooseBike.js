@@ -5,7 +5,7 @@ export const chooseBike = [
         name: 'selectBike',
         checked: false,
         value: 'Nimbus Stark',
-        class: 'mod-display'
+        class: 'mod-display',
     },
     {
         id: 1,

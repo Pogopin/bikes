@@ -20,7 +20,7 @@
                 </div>
                 <div class="item__options-status status">
                     <h4 class="item__title">ESCOLHA A SUA:</h4>
-                    <div v-for="(el, i) in chooseBike"
+                    <div v-for="(el) in props.bikes"
                         :key="el.id"
                     >
                         <component
@@ -38,12 +38,13 @@
                             <div class="status__info-wrapper">
                                 <ul class="status__list">
                                     <li
-                                        v-for="el in props.bikes[i].characteristics"
-                                        :key="el.name"
+                                        v-for="el in el.characteristics"
+                                        :key="el.id"
                                     ><img :src="getImageUrlIcon(el.icon)" alt="image">{{el.name}}</li>
+                                    
                                 </ul>
                                 <div class="status__info-bike-img">
-                                    <img :src="getImageUrl(props.bikes[i].imgFull)" alt="image">
+                                    <img :src="getImageUrl(el.imgFull)" alt="image">
                                 </div>
                             </div>
                         </div>
@@ -287,7 +288,8 @@ const valueTopRadio = ref('Bikcraft')
 const valueBottomRadio = ref('')
 
 function changeTopRadio (newValue) {
-  valueTopRadio.value = newValue
+  valueTopRadio.value = newValue;
+  
 }
 
 function changeBottomRadio (value) {
