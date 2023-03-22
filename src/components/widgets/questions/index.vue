@@ -17,6 +17,7 @@
     </section>
   
 </template>
+
 <style scoped>
 .questions {
     color: var(--bg-second-color);
@@ -76,17 +77,14 @@
     display: none;
 }
 </style>
+
 <script setup>
-import { accordeon } from '../../../config/accordeonConfig.js';
-import { ref } from "vue";
+import { accordeon } from '../../../config/accordeonConfig.js'
 
-// const visible = ref(false);
-function isVisible(index) {
-    const body = document.querySelectorAll('.content__body');
-    const icon = document.querySelectorAll('.content__img');
-    body[index-1].classList.toggle('body-visible');
-    icon[index-1].classList.toggle('img-rotate');
-    
+function isVisible (index) {
+    const body = document.querySelectorAll('.content__body')
+    const icon = document.querySelectorAll('.content__img')
+    body[index-1].classList.toggle('body-visible')
+    icon[index-1].classList.toggle('img-rotate')
 }
-
 </script>

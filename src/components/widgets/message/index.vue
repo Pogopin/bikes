@@ -68,11 +68,8 @@
         </div>
     </section>
 </template>
+
 <style scoped>
-/* 
-.block {
-    flex-basis: 100%;
-} */
 .form {
     display: flex;
     flex-direction: column;
@@ -157,7 +154,6 @@
 }
 .send-message__container {
     display: flex;
-    /* justify-content: space-between; */
 }
 .form-message__item {
     flex-grow: 1;
@@ -166,24 +162,28 @@
     border-radius: 5px;
 }
 </style>
+
 <script setup>
-import { BaseButton, BaseInput, BaseTextArea } from '../../ui/index';
-import { ref, markRaw } from 'vue';
+import { ref, markRaw } from 'vue'
+import { BaseButton, BaseInput, BaseTextArea } from '../../ui/index'
 import { formInputData } from '../../../config/formInputConfig.js'
+
 const formData = ref({
     name: '',
     telephone: '',
     email: '',
     message: ''
 })
+
 const components = {
     BaseInput
 }
-function currentComponent(name) {
+
+function currentComponent (name) {
     return markRaw(components[name])
 }
-function updateFormData(propertyForm, value) {
-    formData.value[propertyForm] = value;
-}
 
+function updateFormData (propertyForm, value) {
+    formData.value[propertyForm] = value
+}
 </script>

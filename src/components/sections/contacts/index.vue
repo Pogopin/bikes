@@ -25,7 +25,9 @@
                         <li>Bicicletas</li>
                         <li>Seguros</li>
                         <li>Contato</li>
-                        <li>Termos e Condições</li>
+                        <router-link to="/conditions" class="td">
+                            <li>Termos e Condições</li>
+                        </router-link>
                     </ul>
                 </div>
             </div>
@@ -34,6 +36,9 @@
 </template>
 
 <style scoped>
+.td {
+    text-decoration: none;
+}
 .contacts {
     padding: 40px 0 60px;
     background-color: var(--bg-color);
@@ -60,6 +65,10 @@
     font-size: 18px;
     line-height: 32px;
     margin-bottom: 32px;
+    
+}
+.content__item-list li {
+    color: var(--text-color);
 }
 .content__item-social {
     display: flex;

@@ -29,6 +29,7 @@
     </div>
   </section>
 </template>
+
 <style scoped>
 .location {
     margin-bottom: 125px;
@@ -113,5 +114,5 @@
 </style>
 
 <script setup>
-import { locationData } from '../../../config/locationConfig.js';
+import { locationData } from '../../../config/locationConfig.js'
 </script>

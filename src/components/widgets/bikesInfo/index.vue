@@ -8,9 +8,10 @@
   </section>
 </template>
 <script setup>
-import { ExtendedBikeCard } from '../index';
-import { defineProps } from 'vue';
-const props = defineProps({
+import { ExtendedBikeCard } from '../index'
+import { defineProps } from 'vue'
+
+defineProps({
     data: Object
 })
 </script>

@@ -17,6 +17,7 @@
         </BaseButton>
     </div>
 </template>
+
 <style scoped>
 .tarif__item-prata{
     padding: 20px 32px 44px 60px;
@@ -76,9 +77,11 @@
     line-height: 48px;
 }
 </style>
+
 <script setup>
 import { BaseButton } from '../../ui'
 import { defineProps } from 'vue'
+
 const props = defineProps({
     tarifInfo: Object,
     data: Object,

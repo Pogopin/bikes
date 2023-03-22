@@ -1,9 +1,10 @@
 <template>
-    <button class="btn"
+    <button
+        class="btn"
         :class="styleButton"
     >
-	{{props.title}}
-    <slot></slot>
+      {{ props.title }}
+      <slot/>
 	</button>
 </template>
 
@@ -33,6 +34,7 @@
     background-color: var(--bg-second-color);
 }
 </style>
+
 <script setup>
 import { computed, defineProps } from 'vue'
 const props = defineProps({

@@ -9,14 +9,14 @@
 </template>
 
 <script setup>
-import { HeaderInner, BikesInfo } from '../../components/widgets';
-import { useBikesStore } from '../../stores/bikesStore';
-import { computed, onBeforeMount } from 'vue';
+import { HeaderInner, BikesInfo } from '../../components/widgets'
+import { useBikesStore } from '../../stores/bikesStore'
+import { computed, onBeforeMount } from 'vue'
 
-const bikesStore = useBikesStore();
-const bikesExData = computed(() => bikesStore.getBikesData);
+const bikesStore = useBikesStore()
+const bikesExData = computed(() => bikesStore.getBikesData)
+
 onBeforeMount(() => {
-  bikesStore.getBikes();
-});
-
+  bikesStore.getBikes()
+})
 </script>

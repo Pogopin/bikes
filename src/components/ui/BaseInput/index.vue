@@ -1,6 +1,6 @@
 <template>
     <label class="label" :for="props.name">{{ props.label }}</label>
-    <input
+    <input 
         class="input-name"
         v-model="val"
         :type="props.type"
@@ -28,9 +28,9 @@
 }
 </style>
 <script setup>
-import { defineProps, defineEmits, computed } from 'vue';
+import { defineProps, defineEmits, computed } from 'vue'
 
-const emits = defineEmits([ 'update:value' ]);
+const emits = defineEmits([ 'update:value' ])
 const props = defineProps({
     value: {
         type: String,
@@ -42,14 +42,12 @@ const props = defineProps({
     },
     type: {
         type: String,
-        default: 'text',
-        validator(value) {
-            return ['text', 'textarea'].includes(value);
-        }
+        default: 'text'
     },
     placeholder: {
         type: String,
-        required: true
+        required: true,
+        default: ''
     },
     label: {
         type: String,
@@ -62,7 +60,7 @@ const val = computed({
     return ''
   },
   set (value) {
-    emits('update:value', value);
+    emits('update:value', value)
   }
 })
 

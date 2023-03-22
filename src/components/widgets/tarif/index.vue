@@ -19,6 +19,7 @@
         </div>
     </section>
 </template>
+
 <style scoped>
 .none {
     display: none;
@@ -44,6 +45,7 @@
 import { defineProps } from 'vue'
 import { TarifCard } from '../index'
 import { data } from '../../../config/tarifConfig.js'
+
 const props = defineProps({
     visibleTitle: Boolean
 })

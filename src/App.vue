@@ -8,6 +8,7 @@
     <Footer />
   </div>
 </template>
+
 <style scoped>
 .layout {
   display: flex;

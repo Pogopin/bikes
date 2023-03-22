@@ -17,6 +17,7 @@
         </div>
     </header>
 </template>
+
 <style scoped>
 .router-link-active.menu__link {
     position: relative;
@@ -48,6 +49,7 @@
     line-height: 32px;
 }
 </style>
+
 <script setup>
 const menu_items = [
     { title: 'Bicicletas', page: '/bicicletas' },

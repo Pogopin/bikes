@@ -17,8 +17,9 @@ const Advantages = defineAsyncComponent(() => import('./advantages/index.vue'))
 const Questions = defineAsyncComponent(() => import('./questions/index.vue'))
 const SendMessage = defineAsyncComponent(() => import('./message/index.vue'))
 const Location = defineAsyncComponent(() => import('./location/index.vue'))
+const OrderForm = defineAsyncComponent(() => import('./orderForm/index.vue'))
+const Policy = defineAsyncComponent(() => import('./policy/index.vue'))
 
 export {
-  Medida, Galery, Tecnologia, Brands, BikeCard, Reviews, Tarif, TarifCard, HeaderInner, ExtendedBikeCard, BikesInfo, MoreInfoCard, Insurance, Advantages, Questions,
-  SendMessage, Location
+  Medida, Location, OrderForm, Policy, SendMessage, Galery, Tecnologia, Brands, BikeCard, Reviews, Tarif, TarifCard, HeaderInner, ExtendedBikeCard, BikesInfo, MoreInfoCard, Insurance, Advantages, Questions
 }

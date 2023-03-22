@@ -16,6 +16,7 @@
         </div>
     </section>
 </template>
+
 <style scoped>
 .galery {
     padding: 240px 0 200px;
@@ -40,8 +41,8 @@
 <script setup>
 import { BikeCard } from '../index'
 import { defineProps } from 'vue'
+
 const props = defineProps({
     data: Object
 })
-
 </script>

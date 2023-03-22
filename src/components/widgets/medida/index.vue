@@ -52,6 +52,7 @@
     color: var(--second-text-color);
 }
 </style>
+
 <script setup>
 import { BaseButton } from '../../ui'
 </script>

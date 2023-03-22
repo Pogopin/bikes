@@ -6,7 +6,7 @@
   <SendMessage />
   <Location />
 </template>
-<script setup>
 
+<script setup>
 import { HeaderInner, SendMessage, Location } from '../../components/widgets'
 </script>

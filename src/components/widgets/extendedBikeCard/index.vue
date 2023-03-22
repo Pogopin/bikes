@@ -10,10 +10,12 @@
                     <h2
                         :class="{'title': props.extendedData.imgFull === 'bicicleta2-full.jpg'}"
                         class="item__content-title">{{title[0]}}
+                    >
                     </h2>
                     <p 
                         :class="{'text': props.extendedData.imgFull === 'bicicleta2-full.jpg'}"
                         class="item__content-text">A {{title[0]}} Stark é a melhor Bikcraft já criada pela nossa equipe. Ela vem equipada com os melhores acessórios, o que garante maior velocidade.
+                    >
                     </p>
                     <ul class="item__content-list">
                         <li
@@ -35,6 +37,7 @@
         </div>
     </div>
 </template>
+
 <style scoped>
 .bikes-info__item {
     padding: 60px 0 60px;
@@ -121,17 +124,21 @@
     bottom: 0px;
 }
 </style>
+
 <script setup>
-import { defineProps } from 'vue';
-import { BaseButton } from '../../ui';
+import { defineProps } from 'vue'
+import { BaseButton } from '../../ui'
+
 const props = defineProps({
     extendedData: Object
 })
-const title = props.extendedData.title.split(' ');
+
+const title = props.extendedData.title.split(' ')
+
 function getImageUrl (name) {
-    return new URL('../../../assets/img/' + name, import.meta.url).href;
+    return new URL('../../../assets/img/' + name, import.meta.url).href
 }
 function getImageUrlIcon (name) {
-    return new URL('../../../assets/img/icon/' + name, import.meta.url).href;
+    return new URL('../../../assets/img/icon/' + name, import.meta.url).href
 }
 </script>
