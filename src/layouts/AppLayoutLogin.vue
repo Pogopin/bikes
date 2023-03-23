@@ -1,14 +1,15 @@
 <script setup>
-// import { useLifecycleLogger } from "@/common/hooks/lifecycleLogger";
-// import TheNavMenu from "@/components/TheNavMenu.vue";
-//
-// useLifecycleLogger({ name: "AppLayoutLogin" });
+
 </script>
 
 <template>
   <div>
     <main class="app-layout-login-main">
-      <div>AppLayoutLogin</div>
+      <div>LOGIN LAYOUT</div>
+      <p>Email</p>
+      <input type="text">
+      <p>Password</p>
+      <input type="text">
       <div class="wrapper w-full h-screen flex justify-center items-center bg-sky-300">
         <slot/>
       </div>

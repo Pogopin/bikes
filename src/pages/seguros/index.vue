@@ -1,14 +1,7 @@
 <template>
-  <HeaderInner
-    text="ESCOLHA O SEGURO"
-    title="você seguro."
-  />
-  <Tarif
-    class="mt"
-    :visibleTitle="false"
-  />
-  <Advantages />
-  <Questions />
+  <div>
+    Seguro page
+  </div>
 </template>
 <style scoped>
 .mt {
@@ -16,5 +9,4 @@
 }
 </style>
 <script setup>
-import { HeaderInner, Tarif, Advantages, Questions } from '../../components/widgets';
 </script>

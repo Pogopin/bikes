@@ -9,7 +9,14 @@
 
 <template>
   <main class="app-layout-default-main p-2 bg-amber-50">
-    <div>AppLayoutDefault</div>
-    <slot />
+    <p>
+      DEFAULT LAYOUT
+    </p>
+    <div>Реклама</div>
+    <div>
+      Navigation
+    </div>
+      <slot />
+    <div>Посты</div>
   </main>
 </template>

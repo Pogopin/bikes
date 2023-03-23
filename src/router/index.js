@@ -24,7 +24,10 @@ const router = createRouter({
       path: '/bicicletas/:id',
       name: 'moreInfo',
       component: moreInfoPage,
-      props: true
+      props: true,
+      meta: {
+        layout: AppLayouts.default
+      }
     },
     {
       path: '/seguros',
