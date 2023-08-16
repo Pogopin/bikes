@@ -66,8 +66,7 @@
                                     :label="el.label"
                                     :placeholder="el.placeholder"
                                     :name="el.name"
-                                    :type="el.type"
-                                    
+                                    :type="el.type"                                    
                                 />
                             </div>
                         </div>
@@ -99,7 +98,6 @@
                             title="SOLICITAR ORÇAMENTO"
 
                         />
-
                     </div>
                 </form>
             </div>

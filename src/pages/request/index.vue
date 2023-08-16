@@ -6,7 +6,7 @@
     <OrderForm
         :bikes="listBikes"
     />
-    {{listBikes}}
+    <!-- {{listBikes}} -->
 </template>
 
 <script setup>
