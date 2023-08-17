@@ -62,6 +62,6 @@ const props = defineProps({
 const title = props.bikes_data.title.split(' ')
 
 function getImageUrl (name) {
-    return new URL('../../../assets/img/' + name, import.meta.url).href
+    return new URL('@/assets/img/' + name, import.meta.url).href
 }
 </script>
