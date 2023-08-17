@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/bikes",
+  base: "https://pogopin.github.io/bikes/",
   plugins: [vue()],
   resolve: {
     alias: {
