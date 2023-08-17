@@ -11,6 +11,7 @@
             </div>
             <div class="medida__item">
                 <img class="intro-img" src="../../../assets/img/img-intro.jpg" alt="">
+                 
             </div>
         </div>
     </section>
