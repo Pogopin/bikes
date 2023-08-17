@@ -1,7 +1,8 @@
 <template>
     <div class="bikes__item">
         <div class="bikes__item-rating"><span>{{ props.bikes_data.rating }}</span></div>
-        <img :src="getImageUrl(props.bikes_data.img)" alt="image">
+        <!-- <img :src="getImageUrl(props.bikes_data.img)" alt="image"> -->
+        <img :src="src" alt="image">
         <h3 class="bikes__item-title">{{ title[0] }}</h3>
         <p class="bikes__item-price">R$ {{ props.bikes_data.price}}</p>
     </div>
@@ -53,7 +54,7 @@
 </style>
 
 <script setup>
-import { defineProps } from 'vue'
+import { defineProps, computed } from 'vue'
 
 const props = defineProps({
     bikes_data: Object
@@ -61,9 +62,13 @@ const props = defineProps({
 
 const title = props.bikes_data.title.split(' ')
 
-function getImageUrl (name) {
-    // return new URL('../../../assets/img/' + name, import.meta.url).href
-    return new URL('/src/assets/img/' + name, import.meta.url).href
+const src = computed(() => {
+    const path = new URL('@/assets/img/', import.meta.url);
+    return `${path}/${props.bikes_data.img}`
+});
+// function getImageUrl (name) {
+//     // return new URL('../../../assets/img/' + name, import.meta.url).href
+//     return new URL('/src/assets/img/' + name, import.meta.url).href
     
-}
+// }
 </script>

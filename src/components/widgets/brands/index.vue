@@ -9,7 +9,8 @@
                     >
                         <td v-for="item in el.img"
                             :key="item.img"
-                        ><img :src="getImageUrl(item.img)" alt="logo">
+                        >
+                        <img :src="getImageUrl(item.img)" alt="logo">
                         </td>
                     </tr>
                 </table>
@@ -61,9 +62,11 @@ td {
 </style>
 
 <script setup>
+import { computed } from 'vue';
 function getImageUrl (name) {
     return new URL('../../../assets/img/brands/' + name, import.meta.url).href
 }
+
 const brands = [
     {
         id: 1,
@@ -84,4 +87,5 @@ const brands = [
         ]
     }
 ]
+
 </script>
