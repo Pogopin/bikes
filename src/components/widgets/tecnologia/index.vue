@@ -1,6 +1,5 @@
 <template>
-    <section class="tecnologia">
-        <div class="tecnologia__container">
+    <section class="tecnologia">        
             <div class="tecnologia__content ">
                 <div class="tecnologia__content-item item-content">
                     <p class="item-content__over-title">Tecnologia avançada</p>
@@ -23,18 +22,16 @@
                 <div class="tecnologia__content-item item-content">
                     <img class="item-content__img" src="@/assets/img/diferencial.jpg" alt="">
                 </div>
-            </div>
-        </div>
+            </div>        
     </section>
 </template>
-
 <style scoped>
 .tecnologia {
     background-color: var(--bg-color);
     padding: 80px 0 88px;
 }
 .tecnologia__content-item {
-    max-width: 598px;
+    max-width: 598px;    
 }
 .item-content__over-title {
     font-family: 'Roboto', sans-serif;
@@ -47,8 +44,8 @@
 }
 .item-content__title {
     font-weight: 600;
-    font-size: 64px;
-    line-height: 72px;
+    font-size: 4rem;
+    line-height: 5rem;
     color: var(--text-color);
     margin-bottom: 20px;
 }
@@ -69,10 +66,18 @@
 }
 .item-content__info {
     margin-top: 84px;
-}
-.item-content__info {
     display: flex;
     gap: 40px;
+}
+@media (max-width: 650px) {
+    .item-content__info {
+		margin-top: 20px;
+	}
+}
+@media (max-width: 650px) {
+    .item-content__info {
+		flex-direction: column;
+	}
 }
 .item-content__info-item {
     max-width: 264px;
@@ -95,12 +100,26 @@
     color: var(--second-text-color);
 }
 .tecnologia__content {
+    max-width: 1270px;
     display: flex;
     gap: 34px;
     position: relative;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+@media (max-width: 1425px) {
+    .tecnologia__content {
+		flex-direction: column;
+        align-items: center;
+	}
 }
 .item-content__img {
     position: absolute;
     top: -165px;
+}
+@media (max-width: 1425px) {
+    .item-content__img {
+		position: static;
+	}
 }
 </style>

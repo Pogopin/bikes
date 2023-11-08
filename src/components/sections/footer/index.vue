@@ -16,6 +16,7 @@
 .container__fliud {
     max-width: 1490px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 .footer__info {
     font-family: 'Roboto', sans-serif;

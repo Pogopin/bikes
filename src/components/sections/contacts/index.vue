@@ -47,8 +47,16 @@
     display: flex;
     gap: 164px;
 }
+@media (max-width: 900px) {
+    .contacts__container{
+        flex-direction: column;
+        gap: 7rem;
+        align-items: center;
+	}
+}
 .contacts__logo {
     max-width: 136px;
+    align-self: start;
 }
 .contact__item-title {
     font-family: 'Roboto', sans-serif;
@@ -77,8 +85,28 @@
 .contacts__content {
     color: var(--second-text-color);
     display: flex;
+    max-width: 80%;
+    width: 55%;
+    justify-content: space-between;
+}
+@media (max-width: 840px) {
+    .contacts__content {
+        flex-direction: column;
+        gap: 7rem;
+        align-items: center;
+	}
+}
+@media (max-width: 840px) {
+    .content__item:first-of-type {
+        margin-right: -4rem !important;
+	}
 }
 .content__item:first-of-type {
     margin-right: 272px;
+}
+@media (max-width: 1024px) {
+    .content__item:first-of-type{
+		margin-right: 3rem;
+	}
 }
 </style>

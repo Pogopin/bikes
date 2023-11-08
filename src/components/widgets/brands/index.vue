@@ -45,13 +45,23 @@ td:last-of-type {
 }
 td {
     border: 3px solid var(--table-color);
-    width: 348px;
+    max-width: 348px;
     vertical-align: middle;
     text-align: center;
-    padding: 45px 0;
+    padding: 45px 10px;
+}
+@media (max-width: 1024px) {
+    td {
+        padding: 2rem 10px;
+	}
 }
 .brands {
     padding: 200px 0 120px;
+}
+@media (max-width: 1200px) {
+    .brands {
+        padding: 6rem 0 5rem;
+	}
 }
 .brands__title {
     margin-bottom: 105px;
@@ -59,6 +69,13 @@ td {
     font-size: 64px;
     line-height: 72px;
     padding-left: 110px;
+}
+@media (max-width: 1024px) {
+    .brands__title {
+        font-size: 4rem;
+		margin-bottom: 4rem;
+        padding-left: 2rem;
+	}
 }
 </style>
 

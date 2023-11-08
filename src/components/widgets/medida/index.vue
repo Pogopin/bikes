@@ -10,8 +10,7 @@
                 </BaseButton>                  
             </div>
             <div class="medida__item">
-                <img class="intro-img" src="../../../assets/img/img-intro.jpg" alt="">
-                 
+                <img class="intro-img" src="../../../assets/img/img-intro.jpg" alt="">                 
             </div>
         </div>
     </section>
@@ -22,18 +21,39 @@
     padding: 196px 0 120px;
     background-color:var(--bg-color);
 }
+@media (max-width: 1255px) {
+    .medida {
+		padding: 70px 0 30px;
+	}
+}
 .medida__container {
     display: flex;
     position: relative;
     gap: 47px;
 }
+@media (max-width: 1255px) {   
+    .medida__container {
+		flex-direction: column;
+		align-items: center;
+	}    
+}
 .medida__item {
     max-width: 553px;
     color: var(--text-color);
 }
+@media (max-width: 550px) {
+    .medida__item {
+		text-align: center;
+	}
+}
 .intro-img {
     position: absolute;
     top: -202px;
+}
+@media (max-width: 1255px) {
+    .intro-img {
+		position: static;
+	}
 }
 .medida__item-title {
     font-weight: 600;

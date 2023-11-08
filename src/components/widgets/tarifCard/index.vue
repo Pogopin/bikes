@@ -67,6 +67,12 @@
     font-size: 36px;
     line-height: 48px;
 }
+@media (max-width: 650px) {
+    .header-item__name {
+		font-size: 3rem;
+        line-height: 4rem;
+	}
+}
 .header-item__name.accent-color {
     color: var(--accent-color);
 }
@@ -75,6 +81,12 @@
     font-weight: 600;
     font-size: 36px;
     line-height: 48px;
+}
+@media (max-width: 650px) {
+    .header-item__price {
+		font-size: 3rem;
+        line-height: 4rem;
+	}
 }
 </style>
 

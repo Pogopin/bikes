@@ -17,10 +17,24 @@
     display: flex;
     justify-content: center;
 }
+@media (max-width: 1650px) {
+    .reviews__content {
+		flex-direction: column;
+        align-items: center;
+	}
+}
 .reviews__item {
     background-color: var(--accent-color);
     padding: 296px 233px 144px 80px;
     position: relative;
+}
+@media (max-width: 1650px) {
+    .reviews__item {
+		padding: 7rem 5rem 5rem 7rem;
+	}
+}
+.reviews__img {
+    max-width: 40%;
 }
 .reviews__img img {
     height: 100%;
@@ -33,6 +47,11 @@
     font-style: italic;
     font-size: 36px;
     line-height: 48px;
+}
+@media (max-width: 1650px) {
+    .item__text {
+		font-size: 2rem;
+	}
 }
 .item__text::after {
     content: '';

@@ -35,10 +35,22 @@
     line-height: 72px;
     margin-bottom: 60px;
 }
+@media (max-width: 1024px) {
+    .tarif__title  {
+		text-align: center;
+        font-size: 5rem;
+	}
+}
 .tarif__content {
     display: flex;
     align-items: center;
     gap: 41px;
+}
+@media (max-width: 1024px) {
+    .tarif__content  {
+		flex-wrap: wrap;
+        justify-content: center;
+	}
 }
 </style>
 <script setup>

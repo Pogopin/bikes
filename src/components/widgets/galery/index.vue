@@ -21,6 +21,11 @@
 .galery {
     padding: 240px 0 200px;
 }
+@media (max-width: 1250px) {
+    .galery {		
+        padding: 30px 0 40px;
+	}
+}
 .container-fluid {
     max-width: 1490px;
     padding: 0 15px;
@@ -33,9 +38,22 @@
     margin-bottom: 42px;
     margin-left: 116px;
 }
+@media (max-width: 990px) {
+    .galery__title  {		
+        text-align: center;
+        margin-left: 0;
+	}
+}
 .galery__bikes {
     display: flex;
+    flex-wrap: wrap;
     gap: 40px;
+}
+@media (max-width: 1490px) {
+    .galery__bikes {		
+        justify-content: center;
+		align-items: center;
+	}
 }
 </style>
 <script setup>

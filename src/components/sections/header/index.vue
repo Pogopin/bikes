@@ -34,8 +34,19 @@
     justify-content: space-between;
     position: relative;
 }
+@media (max-width: 510px) {
+    .header__container {
+        flex-direction: column;    
+        align-items: center;
+	}
+}
 .header__navigation {
     margin-left: auto;
+}
+@media (max-width: 510px) {
+    .header__navigation {
+        margin-left: 0;    
+	}
 }
 .menu {
     display: flex;
